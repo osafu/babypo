@@ -1,0 +1,11 @@
+<p><%= notice %></p>
+
+<h1>Spots#index</h1>
+<% @spots.each do |spot| %>
+  <p>タイトル:<%= spot.title %></p>
+  <p>本文:<%= spot.content %></p>
+  <%= link_to "修正", edit_spot_path(spot.id) %>
+  <%= link_to "削除", spot_path(spot.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %>
+<% end %>
+
+<p><%= link_to "スポットを登録する", new_spot_path %></p>

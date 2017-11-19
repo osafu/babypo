@@ -1,0 +1,21 @@
+<h2>確認画面</h2>
+
+<%= form_for(@spot) do |f| %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :content %>
+  <p>
+    <%= f.label :title %>
+    <%= @spot.title %>
+  </p>
+  <p>
+    <%= f.label :content %>
+    <%= @spot.content %>
+  </p>
+  <%= f.submit %>
+<% end %>
+
+<%= form_for(@spot, url: new_spot_path, method: 'get') do |f| %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :content %>
+  <%= f.submit "もどる", name: 'back' %>
+<% end %>

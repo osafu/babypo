@@ -1,0 +1,20 @@
+<%= form_for(@spot, url: choose_new_or_edit) do |f| %>
+  <% if @spot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @spot.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @spot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <br>
+  <%= f.submit %>
+<% end %>
