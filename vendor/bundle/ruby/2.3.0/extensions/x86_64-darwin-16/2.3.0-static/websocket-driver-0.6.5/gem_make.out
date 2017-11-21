@@ -1,0 +1,15 @@
+current directory: /Users/osafune/workspace/babypo/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+/Users/osafune/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20171120-32295-vrwije.rb extconf.rb
+creating Makefile
+
+current directory: /Users/osafune/workspace/babypo/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/osafune/workspace/babypo/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/osafune/workspace/babypo/vendor/bundle/ruby/2.3.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20171120-32295-1j9aj4a
