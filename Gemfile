@@ -58,3 +58,5 @@ gem 'rails_12factor', group: :productionbun
 gem 'devise'
 
 gem 'faker'
+
+gem 'rails_admin'
