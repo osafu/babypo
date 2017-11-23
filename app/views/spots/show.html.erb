@@ -11,7 +11,7 @@
   </div>
 
   <p>コメント一覧</p>
-  <div id="comments-area">
+  <div class="comments-area">
     <%= render partial: 'comments/index', locals: { comments: @comments, spot: @spot } %>
   </div>
   <%= render partial: 'comments/form', locals: { comment: @comment, spot: @spot } %>

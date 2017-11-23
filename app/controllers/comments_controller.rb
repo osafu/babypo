@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to spot_path(@spot), notice: 'コメントを投稿しました。' }
+        format.js { render :index }
       else
         format.html { render :new }
       end

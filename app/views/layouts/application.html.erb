@@ -3,14 +3,19 @@
   <head>
     <title>Babypo</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
     <header>
       <p class="flash"><%= notice %><%= alert %></p>
+      <ul>
+        <li><%= link_to "babypo", root_path %></li>
+        <li><%= link_to "スポット一覧", spots_path %></li>
+      </ul>
       <ul>
       <% if user_signed_in? %>
         <li><%= link_to 'マイページ', edit_user_registration_path %></li>
