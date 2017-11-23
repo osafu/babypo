@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader #deviseの設定配下に追記
 
+  has_many :spots, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
+
   def self.create_unique_string
     SecureRandom.uuid
   end

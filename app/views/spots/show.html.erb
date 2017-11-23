@@ -1,0 +1,20 @@
+<div class="comments-show">
+  <div class="spot-text">
+    <p><strong>タイトル</strong></p>
+    <p><%= @spot.title %></p>
+    <p><strong>内容</strong></p>
+    <p><%= @spot.content %></p>
+    <p class="right">
+      <strong>作成時間:</strong>
+      <%= @spot.created_at.strftime("%y/%m/%d %p %l:%M") %>
+    </p>
+  </div>
+
+  <p>コメント一覧</p>
+  <div id="comments-area">
+    <%= render partial: 'comments/index', locals: { comments: @comments, spot: @spot } %>
+  </div>
+  <%= render partial: 'comments/form', locals: { comment: @comment, spot: @spot } %>
+  <%= link_to '戻る', spots_path %>
+  </div>
+</div>
