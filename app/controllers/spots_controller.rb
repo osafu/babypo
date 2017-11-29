@@ -25,6 +25,9 @@ class SpotsController < ApplicationController
 
   def create
     @spot = Spot.create(spots_params)
+    if params[:cache][:picture] != ""
+      @spot.picture.retrieve_from_cache! params[:cache][:picture]
+    end
     if @spot.save
       redirect_to spots_path, notice: "スポットを登録しました"
       NoticeMailer.sendmail_spot(@spot).deliver
@@ -57,7 +60,7 @@ class SpotsController < ApplicationController
 
   private
     def spots_params
-      params.require(:spot).permit(:title, :content)
+      params.require(:spot).permit(:title, :content, :picture)
     end
 
     def set_spot

@@ -11,6 +11,11 @@
     <%= f.label :content %>
     <%= @spot.content %>
   </p>
+  <p>
+  <%= hidden_field_tag :"cache[picture]", @spot.picture.cache_name %>
+  <%= image_tag(@spot.picture, :class => "confirm-picture") %>
+  </p>
+
   <%= f.submit %>
 <% end %>
 

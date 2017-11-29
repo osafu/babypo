@@ -1,4 +1,4 @@
-<h1>Spots#index</h1>
+<h1>スポット一覧</h1>
 <% @spots.each do |spot| %>
   <p>ID:<%= spot.id %></p>
   <p>タイトル:
@@ -7,6 +7,10 @@
   <% end %>
   </p>
   <p>本文:<%= spot.content %></p>
+  <p class="spot-picture">
+    画像:<%= image_tag spot.picture %>
+  </p>
+  <br>
 
   <%= link_to "修正", edit_spot_path(spot.id) %>
   <%= link_to "削除", spot_path(spot.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %>
