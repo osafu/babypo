@@ -1,8 +1,26 @@
 <h2>確認画面</h2>
 
 <%= form_for(@spot) do |f| %>
-  <%= f.hidden_field :title %>
-  <%= f.hidden_field :content %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :memo %>
+  <%= f.hidden_field :postal_code %>
+  <%= f.hidden_field :region %>
+  <%= f.hidden_field :address %>
+  <%= f.hidden_field :start_time %>
+  <%= f.hidden_field :close_time %>
+  <%= f.hidden_field :hot_water %>
+  <%= f.hidden_field :female_only %>
+  <%= f.hidden_field :female_only_room %>
+  <%= f.hidden_field :rental_stroller %>
+  <%= f.hidden_field :baby_chair %>
+  <%= f.hidden_field :kids_space %>
+  <%= f.hidden_field :microwave %>
+  <%= f.hidden_field :sink %>
+  <%= f.hidden_field :diapers_trash_bin %>
+  <%= f.hidden_field :diaper_stand_count %>
+  <%= f.hidden_field :diaper_stand %>
+  <%= f.hidden_field :baby_scales %>
+
   <p>
     <%= f.label :title %>
     <%= @spot.title %>
@@ -20,7 +38,24 @@
 <% end %>
 
 <%= form_for(@spot, url: new_spot_path, method: 'get') do |f| %>
-  <%= f.hidden_field :title %>
-  <%= f.hidden_field :content %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :memo %>
+  <%= f.hidden_field :postal_code %>
+  <%= f.hidden_field :region %>
+  <%= f.hidden_field :address %>
+  <%= f.hidden_field :start_time %>
+  <%= f.hidden_field :close_time %>
+  <%= f.hidden_field :hot_water %>
+  <%= f.hidden_field :female_only %>
+  <%= f.hidden_field :female_only_room %>
+  <%= f.hidden_field :rental_stroller %>
+  <%= f.hidden_field :baby_chair %>
+  <%= f.hidden_field :kids_space %>
+  <%= f.hidden_field :microwave %>
+  <%= f.hidden_field :sink %>
+  <%= f.hidden_field :diapers_trash_bin %>
+  <%= f.hidden_field :diaper_stand_count %>
+  <%= f.hidden_field :diaper_stand %>
+  <%= f.hidden_field :baby_scales %>
   <%= f.submit "もどる", name: 'back' %>
 <% end %>

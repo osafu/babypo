@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128111843) do
+ActiveRecord::Schema.define(version: 20171203151920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,26 @@ ActiveRecord::Schema.define(version: 20171128111843) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
+    t.text "name"
+    t.integer "postal_code"
+    t.text "region"
+    t.text "address"
+    t.text "building"
+    t.integer "start_time"
+    t.integer "close_time"
+    t.string "hot_water"
+    t.string "female_only"
+    t.string "female_only_room"
+    t.string "rental_stroller"
+    t.string "baby_chair"
+    t.string "kids_space"
+    t.string "microwave"
+    t.string "sink"
+    t.string "diapers_trash_bin"
+    t.integer "diaper_stand_count"
+    t.string "diaper_stand"
+    t.string "baby_scales"
+    t.text "memo"
   end
 
   create_table "users", force: :cascade do |t|

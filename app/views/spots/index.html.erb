@@ -1,14 +1,29 @@
 <h1>スポット一覧</h1>
 <% @spots.each do |spot| %>
   <p>ID:<%= spot.id %></p>
-  <p>タイトル:
-  <%= link_to spot_path(spot) do %>
-    <%= spot.title %>
-  <% end %>
-  </p>
-  <p>本文:<%= spot.content %></p>
+  <p><%= spot.name %></p>
+  <p><%= spot.memo %></p>
+  <p><%= spot.postal_code %></p>
+  <p><%= spot.region %></p>
+  <p><%= spot.address %></p>
+  <p><%= spot.start_time %></p>
+  <p><%= spot.close_time %></p>
+  <p><%= spot.hot_water %></p>
+  <p><%= spot.female_only %></p>
+  <p><%= spot.female_only_room %></p>
+  <p><%= spot.rental_stroller %></p>
+  <p><%= spot.baby_chair %></p>
+  <p><%= spot.kids_space %></p>
+  <p><%= spot.microwave %></p>
+  <p><%= spot.sink %></p>
+  <p><%= spot.diapers_trash_bin %></p>
+  <p><%= spot.diaper_stand_count %></p>
+  <p><%= spot.diaper_stand %></p>
+  <p><%= spot.baby_scales %></p>
+
   <p class="spot-picture">
-    画像:<%= image_tag spot.picture %>
+  画像:<br/>
+  <%= image_tag spot.picture %>
   </p>
   <br>
 
