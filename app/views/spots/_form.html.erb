@@ -9,6 +9,7 @@
       </ul>
     </div>
   <% end %>
+
   <%= f.label :name, "スポット名" %>
   <%= f.text_field :name %>
   <br>
@@ -63,8 +64,8 @@
   <%= f.label :baby_scales, "身長体重計" %>
   <%= f.text_field :baby_scales %>
   <br>
-  <%= f.label :content, "このスポットについて" %>
-  <%= f.text_field :content %>
+  <%= f.label :memo, "このスポットについて" %>
+  <%= f.text_field :memo %>
   <br>
   <%= f.file_field :picture %>
   <%= f.hidden_field :picture_cache %>
