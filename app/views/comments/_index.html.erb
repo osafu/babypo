@@ -4,11 +4,13 @@
       <li>
         <p><%= comment.user.name %>さんがコメントしました。</p>
         <p><%= comment.content %></p>
-        <% if current_user.id == comment.user.id %>
-          <p>
-            <%= link_to '', edit_spot_comment_path(spot, comment), class: "comment-edit" %>
-            <%= link_to '', spot_comment_path(spot, comment), class: "comment-delete", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
-          </p>
+        <% if user_signed_in? %>
+          <% if current_user.id == comment.user.id %>
+            <p>
+              <%= link_to '', edit_spot_comment_path(spot, comment), class: "comment-edit" %>
+              <%= link_to '', spot_comment_path(spot, comment), class: "comment-delete", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
+            </p>
+          <% end %>
         <% end %>
       </li>
     <% end %>

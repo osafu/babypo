@@ -14,7 +14,9 @@
   <div class="comments-area">
     <%= render partial: 'comments/index', locals: { comments: @comments, spot: @spot } %>
   </div>
+  <% if user_signed_in? %>
   <%= render partial: 'comments/form', locals: { comment: @comment, spot: @spot } %>
+  <% end %>
   <%= link_to '戻る', spots_path %>
   </div>
 </div>
