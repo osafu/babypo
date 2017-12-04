@@ -42,7 +42,6 @@ $f-size-xxl: 34px;
 
 body{
   font-family: 'Arial','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','sans-serif';
-  border-top: solid 8px $main-color;
 }
 
 a{
@@ -102,4 +101,61 @@ footer{
   background-color: #333;
   text-align: center;
   width: 100%;
+}
+
+input[type="text"]
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+    &::-webkit-search-decoration {
+      display: none;
+    }
+    &::focus {
+      outline-offset: -2px;
+    }
+}
+
+input[type="submit"]{
+  border: none;
+}
+
+input[type="submit"]:hover{
+  cursor: pointer;
+}
+
+.btn-strong-m{
+  font-size: 16px;
+  font-weight: bold;
+  background-color: $main-color;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 40px;
+  width: 200px;
+  color: #FFF;
+}
+
+.btn-strong-m:hover{
+  @include opacity(0.8)
+}
+
+.spot-picture{
+  margin: 30px 0 10px 0;
+}
+
+.spot-form-title{
+  margin-bottom: 10px;
+}
+
+.spot-form-data input{
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 1px #E5E5E5;
+  border-radius: 3px;
+  width: 200px;
 }

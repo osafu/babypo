@@ -10,65 +10,48 @@
     </div>
   <% end %>
 
-  <%= f.label :name, "スポット名" %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :postal_code, "郵便番号" %>
-  <%= f.text_field :postal_code %>
-  <br>
-  <%= f.label :region, "都道府県" %>
-  <%= f.text_field :region %>
-  <br>
-  <%= f.label :address, "住所" %>
-  <%= f.text_field :address %>
-  <br>
-  <%= f.label :start_time, "営業開始時間" %>
-  <%= f.text_field :start_time %>
-  <br>
-  <%= f.label :close_time, "営業終了時間" %>
-  <%= f.text_field :close_time %>
-  <br>
-  <%= f.label :hot_water, "お湯" %>
-  <%= f.text_field :hot_water %>
-  <br>
-  <%= f.label :female_only, "女性限定" %>
-  <%= f.text_field :female_only %>
-  <br>
-  <%= f.label :female_only_room, "個室のみ女性限定" %>
-  <%= f.text_field :female_only_room %>
-  <br>
-  <%= f.label :rental_stroller, "ベビーカー貸出" %>
-  <%= f.text_field :rental_stroller %>
-  <br>
-  <%= f.label :baby_chair, "ベビーチェア" %>
-  <%= f.text_field :baby_chair %>
-  <br>
-  <%= f.label :kids_space, "キッズスペース" %>
-  <%= f.text_field :kids_space %>
-  <br>
-  <%= f.label :microwave, "電子レンジ" %>
-  <%= f.text_field :microwave %>
-  <br>
-  <%= f.label :sink, "シンク・洗面台" %>
-  <%= f.text_field :sink %>
-  <br>
-  <%= f.label :diapers_trash_bin, "おむつ用ゴミ箱" %>
-  <%= f.text_field :diapers_trash_bin %>
-  <br>
-  <%= f.label :diaper_stand_count, "おむつ台の数" %>
-  <%= f.text_field :diaper_stand_count %>
-  <br>
-  <%= f.label :diaper_stand, "自販機（ドリンク）" %>
-  <%= f.text_field :diaper_stand %>
-  <br>
-  <%= f.label :baby_scales, "身長体重計" %>
-  <%= f.text_field :baby_scales %>
-  <br>
-  <%= f.label :memo, "このスポットについて" %>
-  <%= f.text_field :memo %>
-  <br>
-  <%= f.file_field :picture %>
-  <%= f.hidden_field :picture_cache %>
-  <br>
-  <%= f.submit %>
+  <dl class="spot-form">
+    <dt class="spot-form-title"><%= f.label :name, "スポット名" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :name %></dd>
+    <dt class="spot-form-title"><%= f.label :postal_code, "郵便番号" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :postal_code %></dd>
+    <dt class="spot-form-title"><%= f.label :region, "都道府県" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :region %></dd>
+    <dt class="spot-form-title"><%= f.label :address, "住所" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :address %></dd>
+    <dt class="spot-form-title"><%= f.label :start_time, "営業開始時間" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :start_time %></dd>
+    <dt class="spot-form-title"><%= f.label :close_time, "営業終了時間" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :close_time %></dd>
+    <dt class="spot-form-title"><%= f.label :hot_water, "お湯" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :hot_water %></dd>
+    <dt class="spot-form-title"><%= f.label :female_only, "女性限定" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :female_only %></dd>
+    <dt class="spot-form-title"><%= f.label :female_only_room, "個室のみ女性限定" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :female_only_room %></dd>
+    <dt class="spot-form-title"><%= f.label :rental_stroller, "ベビーカー貸出" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :rental_stroller %></dd>
+    <dt class="spot-form-title"><%= f.label :baby_chair, "ベビーチェア" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :baby_chair %></dd>
+    <dt class="spot-form-title"><%= f.label :kids_space, "キッズスペース" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :kids_space %></dd>
+    <dt class="spot-form-title"><%= f.label :microwave, "電子レンジ" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :microwave %></dd>
+    <dt class="spot-form-title"><%= f.label :sink, "シンク・洗面台" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :sink %></dd>
+    <dt class="spot-form-title"><%= f.label :diapers_trash_bin, "おむつ用ゴミ箱" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :diapers_trash_bin %></dd>
+    <dt class="spot-form-title"><%= f.label :diaper_stand_count, "おむつ台の数" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :diaper_stand_count %></dd>
+    <dt class="spot-form-title"><%= f.label :diaper_stand, "自販機（ドリンク）" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :diaper_stand %></dd>
+    <dt class="spot-form-title"><%= f.label :baby_scales, "身長体重計" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :baby_scales %></dd>
+    <dt class="spot-form-title"><%= f.label :memo, "このスポットについて" %></dt>
+    <dd class="spot-form-data"><%= f.text_field :memo %></dd>
+    <dt class="spot-form-title"><%= f.file_field :picture, class: "spot-picture" %></dt>
+    <dd class="spot-form-data"><%= f.hidden_field :picture_cache %></dd>
+  </dl>
+
+  <%= f.submit "確認画面へ", class: "btn-strong-m" %>
 <% end %>
