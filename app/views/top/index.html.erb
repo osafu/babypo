@@ -1,2 +1,25 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
+<h1>授乳室やおむつ台を検索</h1>
+<% @spots.each do |spot| %>
+    <p class="spot-name"><%= link_to spot_path(spot) do %><%= spot.name %><% end %></p>
+    <p class="spot-postal_code"><%= spot.postal_code %></p>
+    <p class="spot-region"><%= spot.region %></p>
+    <p class="spot-address"><%= spot.address %></p>
+    <p class="spot-start_time"><%= spot.start_time %></p>
+    <p class="spot-close_time"><%= spot.close_time %></p>
+    <p class="spot-hot_water"><%= spot.hot_water %></p>
+    <p class="spot-female_only"><%= spot.female_only %></p>
+    <p class="spot-rental_stroller"><%= spot.rental_stroller %></p>
+    <p class="spot-baby_chair"><%= spot.baby_chair %></p>
+    <p class="spot-kids_space"><%= spot.kids_space %></p>
+    <p class="spot-microwave"><%= spot.microwave %></p>
+    <p class="spot-sink"><%= spot.sink %></p>
+    <p class="spot-diapers_trash_bin"><%= spot.diapers_trash_bin %></p>
+    <p class="spot-diaper_stand_count"><%= spot.diaper_stand_count %></p>
+    <p class="spot-diaper_stand"><%= spot.diaper_stand %></p>
+    <p class="spot-baby_scales"><%= spot.baby_scales %></p>
+    <p class="spot-picture"><%= image_tag spot.picture %></p>
+  <%= link_to "修正", edit_spot_path(spot.id) %>
+  <%= link_to "削除", spot_path(spot.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %>
+<% end %>
+
+<p><%= link_to "スポットを登録する", new_spot_path %></p>

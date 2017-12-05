@@ -1,35 +1,27 @@
 <h1>スポット一覧</h1>
+<section class="spots-list-wrap">
 <% @spots.each do |spot| %>
-    <p>ID:<%= spot.id %></p>
-    <p><%= link_to spot_path(spot) do %><%= spot.name %><% end %>
-    </p>
-    <p><%= spot.memo %></p>
-    <p><%= spot.postal_code %></p>
-    <p><%= spot.region %></p>
-    <p><%= spot.address %></p>
-    <p><%= spot.start_time %></p>
-    <p><%= spot.close_time %></p>
-    <p><%= spot.hot_water %></p>
-    <p><%= spot.female_only %></p>
-    <p><%= spot.female_only_room %></p>
-    <p><%= spot.rental_stroller %></p>
-    <p><%= spot.baby_chair %></p>
-    <p><%= spot.kids_space %></p>
-    <p><%= spot.microwave %></p>
-    <p><%= spot.sink %></p>
-    <p><%= spot.diapers_trash_bin %></p>
-    <p><%= spot.diaper_stand_count %></p>
-    <p><%= spot.diaper_stand %></p>
-    <p><%= spot.baby_scales %></p>
-
-  <p class="spot-picture">
-  画像:<br/>
-  <%= image_tag spot.picture %>
-  </p>
-  <br>
-
-  <%= link_to "修正", edit_spot_path(spot.id) %>
-  <%= link_to "削除", spot_path(spot.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %>
+    <article class="spots-list">
+      <p class="spot-name"><%= link_to spot_path(spot) do %><%= spot.name %><% end %></p>
+      <p class="spot-address"><%= spot.postal_code %><%= spot.region %><%= spot.address %></p>
+      <p class="spot-start_time"><%= spot.start_time %></p>
+      <p class="spot-close_time"><%= spot.close_time %></p>
+      <p class="spot-hot_water"><%= spot.hot_water %></p>
+      <p class="spot-female_only"><%= spot.female_only %></p>
+      <p class="spot-rental_stroller"><%= spot.rental_stroller %></p>
+      <p class="spot-baby_chair"><%= spot.baby_chair %></p>
+      <p class="spot-kids_space"><%= spot.kids_space %></p>
+      <p class="spot-microwave"><%= spot.microwave %></p>
+      <p class="spot-sink"><%= spot.sink %></p>
+      <p class="spot-diapers_trash_bin"><%= spot.diapers_trash_bin %></p>
+      <p class="spot-diaper_stand_count"><%= spot.diaper_stand_count %></p>
+      <p class="spot-diaper_stand"><%= spot.diaper_stand %></p>
+      <p class="spot-baby_scales"><%= spot.baby_scales %></p>
+      <p class="spot-picture"><%= image_tag spot.picture %></p>
+      <%= link_to "修正", edit_spot_path(spot.id) %>
+      <%= link_to "削除", spot_path(spot.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %>
+    </article>
 <% end %>
+</section>
 
 <p><%= link_to "スポットを登録する", new_spot_path %></p>
