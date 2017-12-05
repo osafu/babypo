@@ -1,13 +1,22 @@
 <div class="comments-show">
-  <div class="spot-text">
-    <p><strong>タイトル</strong></p>
-    <p><%= @spot.title %></p>
-    <p><strong>内容</strong></p>
-    <p><%= @spot.content %></p>
-    <p class="right">
-      <strong>作成時間:</strong>
-      <%= @spot.created_at.strftime("%y/%m/%d %p %l:%M") %>
-    </p>
+  <div class="spot-info">
+    <p>ID:<%= @spot.id %></p>
+    <p><%= @spot.name %></p>
+    <p><%= @spot.memo %></p>
+    <p><%= @spot.postal_code %></p>
+    <p><%= @spot.region %></p>
+    <p><%= @spot.address %></p>
+    <p><%= @spot.start_time %></p>
+    <p><%= @spot.close_time %></p>
+    <p><%= @spot.hot_water %></p>
+    <p><%= @spot.female_only %></p>
+    <p><%= @spot.rental_stroller %></p>
+    <p><%= @spot.baby_chair %></p>
+    <p><%= @spot.kids_space %></p>
+    <p><%= @spot.microwave %></p>
+    <p><%= @spot.sink %></p>
+    <p><%= @spot.diaper_stand %></p>
+    <p><%= @spot.baby_scales %></p>
   </div>
 
   <p>コメント一覧</p>

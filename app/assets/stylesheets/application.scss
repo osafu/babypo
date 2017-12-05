@@ -42,6 +42,7 @@ $f-size-xxl: 34px;
 
 body{
   font-family: 'Arial','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','sans-serif';
+  font-size: 14px;
 }
 
 a{
@@ -93,6 +94,74 @@ header{
     }
   }
 }
+
+.main-column{
+  width: 1060px;
+  margin: 40px auto;
+  .spot-form-wrap{
+    padding: 30px;
+    background-color: #EEE;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 10px;
+    @include box-sizing(border-box);
+  }
+  .spot-form{
+    .list-time-wrap{
+      display: flex;
+    }
+    .list-select-wrap{
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      align-items: center;
+      margin-bottom: 30px;
+      .form-list-title{
+        text-align: center;
+      }
+      .spot-form-list{
+        padding: 10px;
+        margin: 10px;
+        @include box-sizing(border-box);
+        width:120px;
+        text-align: center;
+      }
+    }
+    #spot_memo {
+      width: 100%;
+    }
+    .spot-form-list{
+      margin-bottom: 15px;
+      text-align: left;
+      .form-list-data{
+        #spot_name,
+        #spot_address{ width: 100%;}
+      }
+    }
+    .spot-form-list-picture{
+      text-align: center;
+    }
+    .form-list-data{
+      input,
+      textarea{
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: solid 1px #E5E5E5;
+        border-radius: 3px;
+        @include box-sizing(border-box);
+      }
+    }
+  }
+
+  .spot-picture{
+    margin: 30px 0 10px 0;
+  }
+  .form-list-title{
+    margin-bottom: 10px;
+  }
+}
+
 footer{
   box-sizing: border-box;
   color: #FFF;
@@ -105,23 +174,20 @@ footer{
 
 input[type="text"]
 input[type="submit"],
-input[type="button"] {
+input[type="button"],
+textarea {
   border-radius: 0;
   -webkit-box-sizing: content-box;
   -webkit-appearance: button;
   appearance: button;
   border: none;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
     &::-webkit-search-decoration {
       display: none;
     }
     &::focus {
       outline-offset: -2px;
     }
-}
-
-input[type="submit"]{
-  border: none;
 }
 
 input[type="submit"]:hover{
@@ -140,22 +206,5 @@ input[type="submit"]:hover{
 }
 
 .btn-strong-m:hover{
-  @include opacity(0.8)
-}
-
-.spot-picture{
-  margin: 30px 0 10px 0;
-}
-
-.spot-form-title{
-  margin-bottom: 10px;
-}
-
-.spot-form-data input{
-  font-size: 16px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: solid 1px #E5E5E5;
-  border-radius: 3px;
-  width: 200px;
+  @include opacity(0.8);
 }

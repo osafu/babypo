@@ -1,3 +1,5 @@
+<section class="spot-form-wrap">
+
 <%= form_for(@spot, url: choose_new_or_edit) do |f| %>
   <% if @spot.errors.any? %>
     <div id="error_explanation">
@@ -10,48 +12,87 @@
     </div>
   <% end %>
 
-  <dl class="spot-form">
-    <dt class="spot-form-title"><%= f.label :name, "スポット名" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :name %></dd>
-    <dt class="spot-form-title"><%= f.label :postal_code, "郵便番号" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :postal_code %></dd>
-    <dt class="spot-form-title"><%= f.label :region, "都道府県" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :region %></dd>
-    <dt class="spot-form-title"><%= f.label :address, "住所" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :address %></dd>
-    <dt class="spot-form-title"><%= f.label :start_time, "営業開始時間" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :start_time %></dd>
-    <dt class="spot-form-title"><%= f.label :close_time, "営業終了時間" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :close_time %></dd>
-    <dt class="spot-form-title"><%= f.label :hot_water, "お湯" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :hot_water %></dd>
-    <dt class="spot-form-title"><%= f.label :female_only, "女性限定" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :female_only %></dd>
-    <dt class="spot-form-title"><%= f.label :female_only_room, "個室のみ女性限定" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :female_only_room %></dd>
-    <dt class="spot-form-title"><%= f.label :rental_stroller, "ベビーカー貸出" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :rental_stroller %></dd>
-    <dt class="spot-form-title"><%= f.label :baby_chair, "ベビーチェア" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :baby_chair %></dd>
-    <dt class="spot-form-title"><%= f.label :kids_space, "キッズスペース" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :kids_space %></dd>
-    <dt class="spot-form-title"><%= f.label :microwave, "電子レンジ" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :microwave %></dd>
-    <dt class="spot-form-title"><%= f.label :sink, "シンク・洗面台" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :sink %></dd>
-    <dt class="spot-form-title"><%= f.label :diapers_trash_bin, "おむつ用ゴミ箱" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :diapers_trash_bin %></dd>
-    <dt class="spot-form-title"><%= f.label :diaper_stand_count, "おむつ台の数" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :diaper_stand_count %></dd>
-    <dt class="spot-form-title"><%= f.label :diaper_stand, "自販機（ドリンク）" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :diaper_stand %></dd>
-    <dt class="spot-form-title"><%= f.label :baby_scales, "身長体重計" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :baby_scales %></dd>
-    <dt class="spot-form-title"><%= f.label :memo, "このスポットについて" %></dt>
-    <dd class="spot-form-data"><%= f.text_field :memo %></dd>
-    <dt class="spot-form-title"><%= f.file_field :picture, class: "spot-picture" %></dt>
-    <dd class="spot-form-data"><%= f.hidden_field :picture_cache %></dd>
-  </dl>
+  <div class="spot-form">
+    <div class="spot-form-list spot-form-list-name">
+      <div class="form-list-title"><%= f.label :name, "スポット名" %></div>
+      <div class="form-list-data"><%= f.text_field :name %></div>
+    </div>
+    <div class="spot-form-list spot-form-list-postal_code">
+      <div class="form-list-title"><%= f.label :postal_code, "郵便番号" %></div>
+      <div class="form-list-data"><%= f.text_field :postal_code %></div>
+    </div>
+    <div class="spot-form-list spot-form-list-region">
+      <div class="form-list-title"><%= f.label :region, "都道府県" %></div>
+      <div class="form-list-data"><%= f.text_field :region %></div>
+    </div>
+    <div class="spot-form-list spot-form-list-address">
+      <div class="form-list-title"><%= f.label :address, "住所" %></div>
+      <div class="form-list-data"><%= f.text_field :address %></div>
+    </div>
+    <div class="list-time-wrap">
+      <div class="spot-form-list spot-form-list-start_time">
+        <div class="form-list-title"><%= f.label :start_time, "営業開始時間" %></div>
+        <div class="form-list-data"><%= f.text_field :start_time %></div>
+      </div>
+      <span>~</span>
+      <div class="spot-form-list spot-form-list-close_time">
+        <div class="form-list-title"><%= f.label :close_time, "営業終了時間" %></div>
+        <div class="form-list-data"><%= f.text_field :close_time %></div>
+      </div>
+    </div>
+    <div class="list-select-wrap">
+      <div class="spot-form-list spot-form-list-diaper_stand_count">
+        <div class="form-list-title"><%= f.label :diaper_stand_count, "おむつ台" %></div>
+        <div class="form-list-data"><%= f.select :diaper_stand_count, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-sink">
+        <div class="form-list-title"><%= f.label :sink, "シンク・洗面台" %></div>
+        <div class="form-list-data"><%= f.select :sink, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-hot_water">
+        <div class="form-list-title"><%= f.label :hot_water, "お湯" %></div>
+        <div class="form-list-data"><%= f.select :hot_water, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-female_only">
+        <div class="form-list-title"><%= f.label :female_only, "女性限定" %></div>
+        <div class="form-list-data"><%= f.select :female_only, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-rental_stroller">
+        <div class="form-list-title"><%= f.label :rental_stroller, "ベビーカー貸出" %></div>
+        <div class="form-list-data"><%= f.select :rental_stroller, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-baby_chair">
+        <div class="form-list-title"><%= f.label :baby_chair, "ベビーチェア" %></div>
+        <div class="form-list-data"><%= f.select :baby_chair, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-kids_space">
+        <div class="form-list-title"><%= f.label :kids_space, "キッズスペース" %></div>
+        <div class="form-list-data"><%= f.select :kids_space, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-microwave">
+        <div class="form-list-title"><%= f.label :microwave, "電子レンジ" %></div>
+        <div class="form-list-data"><%= f.select :microwave, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-diaper_stand">
+        <div class="form-list-title"><%= f.label :diaper_stand, "自販機" %></div>
+        <div class="form-list-data"><%= f.select :diaper_stand, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-baby_scales">
+        <div class="form-list-title"><%= f.label :baby_scales, "身長体重計" %></div>
+        <div class="form-list-data"><%= f.select :baby_scales, [["わからない", "わからない"],["ある", "ある"],["ない", "ない"]],class:"list-data-select" %></div>
+      </div>
+    </div>
+    <div class="spot-form-list spot-form-list-memo">
+      <div class="form-list-title"><%= f.label :memo, "ひとことメモ" %></div>
+      <div class="form-list-data"><%= f.text_area :memo, size: "50x5" %></div>
+    </div>
+    <div class="spot-form-list spot-form-list-picture">
+      <div class="form-list-title"><%= f.file_field :picture, class: "spot-picture" %></div>
+      <div class="form-list-data"><%= f.hidden_field :picture_cache %></div>
+    </div>
+  </div>
 
   <%= f.submit "確認画面へ", class: "btn-strong-m" %>
 <% end %>
+
+</section>
