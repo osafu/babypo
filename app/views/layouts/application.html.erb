@@ -12,23 +12,25 @@
   <body>
     <p class="flash"><%= notice %><%= alert %></p>
     <header>
-      <p class="logo">
-        <%= link_to root_path do %>
-          <%= image_tag "logo.svg", class: 'logo-img' %>
-        <% end %>
-      </p>
-      <nav class="head-nav">
-        <ul class="nav-menu">
-          <li class="nav-menu-list"><%= link_to "スポット一覧", spots_path %></li>
-          <% if user_signed_in? %>
-          <li class="nav-menu-list"><%= link_to 'マイページ', edit_user_registration_path %></li>
-          <li class="nav-menu-list"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-          <% else %>
-          <li class="nav-menu-list"><%= link_to 'ログイン', new_user_session_path  %></li>
-          <li class="nav-menu-list"><%= link_to 'サインアップ', new_user_registration_path %></li>
+      <section class="header-in">
+        <p class="logo">
+          <%= link_to root_path do %>
+            <%= image_tag "logo.svg", class: 'logo-img' %>
           <% end %>
-        </ul>
-      </nav>
+        </p>
+        <nav class="head-nav">
+          <ul class="nav-menu">
+            <li class="nav-menu-list"><%= link_to "スポット一覧", spots_path %></li>
+            <% if user_signed_in? %>
+            <li class="nav-menu-list"><%= link_to 'マイページ', edit_user_registration_path %></li>
+            <li class="nav-menu-list"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li class="nav-menu-list"><%= link_to 'ログイン', new_user_session_path  %></li>
+            <li class="nav-menu-list"><%= link_to 'サインアップ', new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </section>
     </header>
     <section class="main-column">
     <%= yield %>

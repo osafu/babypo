@@ -1,4 +1,15 @@
 <h1>スポット一覧</h1>
+
+<section class="spots-search">
+
+  <%= search_form_for @search do |f| %>
+  <%= f.label :name_or_region_or_address_cont,"キーワード" %>
+  <%= f.search_field :name_or_region_or_address_cont %>
+  <%= f.submit 'SEARCH' %>
+  <% end %>
+
+</section>
+
 <section class="spots-list-wrap">
 <% @spots.each do |spot| %>
     <article class="spots-list">
@@ -23,5 +34,3 @@
     </article>
 <% end %>
 </section>
-
-<p><%= link_to "スポットを登録する", new_spot_path %></p>

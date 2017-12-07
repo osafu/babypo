@@ -75,3 +75,5 @@ gem 'omniauth-facebook'
 #image uploader
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'ransack', github: 'activerecord-hackery/ransack'

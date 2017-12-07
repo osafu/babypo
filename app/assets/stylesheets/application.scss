@@ -65,32 +65,34 @@ a{
  }
 
 header{
-  width: 1160px;
-  margin: 0 auto;
-  padding: 30px;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  justify-content: center;
-  .logo{
-    width: 160px;
-    margin-right: auto;
-  }
-  .head-nav{
+  .header-in{
+    width: 1160px;
+    margin: 0 auto;
+    padding: 30px;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
-    align-items: center;
     justify-content: center;
-    .nav-menu{
+    .logo{
+      width: 160px;
+      margin-right: auto;
+    }
+    .head-nav{
       display: -webkit-flex;
       display: -ms-flex;
       display: flex;
       align-items: center;
       justify-content: center;
-      .nav-menu-list{
-        &:not(:last-child){
-          margin-right: 20px;
+      .nav-menu{
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .nav-menu-list{
+          &:not(:last-child){
+            margin-right: 20px;
+          }
         }
       }
     }
@@ -100,21 +102,26 @@ header{
 .main-column{
   width: 1060px;
   margin: 40px auto;
-
+  .spots-search{
+    margin: 40px 0;
+  }
   .spots-list-wrap{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: start;
     flex-flow: wrap;
+    margin-bottom: 40px;
     .spots-list{
       padding: 30px;
-      margin-bottom: 30px;
+      margin: 0 0 30px 0;
       border-radius: 5px;
-      width: 30%;
+      width: 32%;
       text-align: left;
       box-sizing: border-box;
       background-color: #FFF;
       border: solid 1px #CCC;
+      &:not(:nth-child(3n)){
+        margin-right: 2%;
+      }
     }
     .spot-name{
       font-size: 26px;
@@ -139,7 +146,6 @@ header{
       display: flex;
       flex-wrap: wrap;
       text-align: center;
-      align-items: center;
       margin-bottom: 30px;
       .form-list-title{
         text-align: center;
@@ -206,7 +212,7 @@ textarea {
     &::-webkit-search-decoration {
       display: none;
     }
-    &::focus {
+    &:focus {
       outline-offset: -2px;
     }
 }
@@ -228,4 +234,5 @@ input[type="submit"]:hover{
 
 .btn-strong-m:hover{
   @include opacity(0.8);
+  text-decoration: none;
 }

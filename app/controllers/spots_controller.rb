@@ -3,11 +3,13 @@ class SpotsController < ApplicationController
   before_action :set_spot, only: [:show, :edit, :update, :destroy]
 
   def index
-    @spots = Spot.all
+    @search = Spot.ransack(params[:q])
+    @spots = @search.result(distinct: true)
     respond_to do |format|
-        format.html
-        format.js
+      format.html
+      format.json
     end
+
   end
 
   def show
