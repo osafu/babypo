@@ -43,7 +43,7 @@ $f-size-xxl: 34px;
 body{
   font-family: 'Arial','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','sans-serif';
   font-size: 14px;
-  background-color: #EFEFEF;
+  background-color: #F5F5F5;
 }
 
 a{
@@ -236,3 +236,12 @@ input[type="submit"]:hover{
   @include opacity(0.8);
   text-decoration: none;
 }
+
+#map{
+
+height: 400px;
+   margin-left:auto;    /* 左側マージンを自動的に空ける */
+   margin-right:auto;   /* 右側マージンを自動的に空ける */
+   text-align:left;     /* 中身を左側表示に戻す */
+   width: 80%
+ }
