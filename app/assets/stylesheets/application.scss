@@ -44,6 +44,7 @@ body{
   font-family: 'Arial','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','sans-serif';
   font-size: 14px;
   background-color: #F5F5F5;
+  color: #333;
 }
 
 a{
@@ -111,7 +112,7 @@ header{
     flex-flow: wrap;
     margin-bottom: 40px;
     .spots-list{
-      padding: 30px;
+      padding: 30px 25px;
       margin: 0 0 30px 0;
       border-radius: 5px;
       width: 32%;
@@ -123,7 +124,36 @@ header{
         margin-right: 2%;
       }
     }
-    .spot-name{
+    .material-icons{
+      margin-right: 5px;
+      color: #666;
+    }
+    .spot-info-address {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .spot-times{
+      display: flex;
+      align-items: center;
+      .dash{
+        margin: 0 5px;
+      }
+    }
+    .spot-tags{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin: 20px 0;
+      .spot-info-tag{
+        padding: 8px;
+        margin: 0 5px 5px 0;
+        background-color: #4BA69C;
+        color: #FFF;
+        border-radius: 30px;
+      }
+    }
+    .spot-info-name{
       font-size: 26px;
       font-weight: bold;
       margin-bottom: 20px;

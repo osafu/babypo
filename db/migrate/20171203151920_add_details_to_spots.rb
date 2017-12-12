@@ -5,8 +5,8 @@ class AddDetailsToSpots < ActiveRecord::Migration[5.1]
     add_column :spots, :region, :text
     add_column :spots, :address, :text
     add_column :spots, :building, :text
-    add_column :spots, :start_time, :integer
-    add_column :spots, :close_time, :integer
+    add_column :spots, :start_time, :string
+    add_column :spots, :close_time, :string
     add_column :spots, :hot_water, :string
     add_column :spots, :female_only, :string
     add_column :spots, :female_only_room, :string
