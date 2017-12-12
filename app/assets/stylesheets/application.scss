@@ -216,11 +216,13 @@ textarea {
       outline-offset: -2px;
     }
 }
-
+input[type="submit"] {
+    -webkit-appearance:none;
+    vertical-align:middle;
+}
 input[type="submit"]:hover{
   cursor: pointer;
 }
-
 .btn-strong-m{
   font-size: 16px;
   font-weight: bold;
@@ -230,8 +232,8 @@ input[type="submit"]:hover{
   border-radius: 40px;
   width: 200px;
   color: #FFF;
+  border: 0;
 }
-
 .btn-strong-m:hover{
   @include opacity(0.8);
   text-decoration: none;
