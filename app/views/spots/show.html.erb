@@ -30,6 +30,20 @@
   </div>
 </div>
 
+<section class="spot-action">
+  <p class="spot-action-edit">
+    <%= link_to edit_spot_path(@spot.id) do %>
+      <i class="material-icons">create</i>
+    <% end %>
+  </p>
+  <p class="spot-action-delete">
+    <%= link_to spot_path(@spot.id), method: :delete, data: { confirm: '本当に削除していいですか？' } do %>
+      <i class="material-icons">delete</i>
+    <% end %>
+  </p>
+</section>
+
+
 <script type="text/javascript">
   var getMap = (function() {
 

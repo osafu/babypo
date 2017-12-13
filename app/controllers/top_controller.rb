@@ -1,5 +1,6 @@
 class TopController < ApplicationController
   def index
-    @spots = Spot.all
+    @search = Spot.ransack(params[:q])
+    @spots = @search.result(distinct: true)
   end
 end

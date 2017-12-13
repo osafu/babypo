@@ -5,14 +5,10 @@ class SpotsController < ApplicationController
   def index
     @search = Spot.ransack(params[:q])
     @spots = @search.result(distinct: true)
-    @address = '〒105-0011 東京都港区芝公園４丁目２-８'
-
-
     respond_to do |format|
       format.html
       format.json
     end
-
   end
 
   def show

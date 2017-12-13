@@ -1,13 +1,10 @@
 <h1>スポット一覧</h1>
 
 <section class="spots-search">
-
   <%= search_form_for @search do |f| %>
-  <%= f.label :name_or_region_or_address_cont,"キーワード" %>
-  <%= f.search_field :name_or_region_or_address_cont %>
-  <%= f.submit 'SEARCH' %>
+  <%= f.search_field :name_or_region_or_address_cont, class: 'search-input' %>
+  <%= f.submit '検索', class: 'search-btn' %>
   <% end %>
-
 </section>
 
 <section class="spots-list-wrap">
@@ -27,17 +24,11 @@
         </div>
       <% end %>
       <section class="spot-tags">
+        <% if spot.diaper_stand == "true" %>
+          <p class="spot-info spot-info-tag spot-info-diaper_stand">おむつ台</p>
+        <% end %>
         <% if spot.hot_water == "true" %>
           <p class="spot-info spot-info-tag spot-info-hot_water">お湯</p>
-        <% end %>
-        <% if spot.female_only == "true" %>
-          <p class="spot-info spot-info-tag spot-info-female_only">女性限定</p>
-        <% end %>
-        <% if spot.rental_stroller == "true" %>
-          <p class="spot-info spot-info-tag spot-info-rental_stroller">ベビーカー貸出</p>
-        <% end %>
-        <% if spot.baby_chair == "true" %>
-          <p class="spot-info spot-info-tag spot-info-baby_chair">ベビーチェア</p>
         <% end %>
         <% if spot.kids_space == "true" %>
           <p class="spot-info spot-info-tag spot-info-kids_space">キッズスペース</p>
@@ -48,11 +39,17 @@
         <% if spot.sink == "true" %>
           <p class="spot-info spot-info-tag spot-info-sink">洗面台</p>
         <% end %>
+        <% if spot.female_only == "true" %>
+          <p class="spot-info spot-info-tag spot-info-female_only">女性限定</p>
+        <% end %>
+        <% if spot.rental_stroller == "true" %>
+          <p class="spot-info spot-info-tag spot-info-rental_stroller">ベビーカー貸出</p>
+        <% end %>
+        <% if spot.baby_chair == "true" %>
+          <p class="spot-info spot-info-tag spot-info-baby_chair">ベビーチェア</p>
+        <% end %>
         <% if spot.diapers_trash_bin == "true" %>
           <p class="spot-info spot-info-tag spot-info-diapers_trash_bin">おむつ用ゴミ箱</p>
-        <% end %>
-        <% if spot.diaper_stand == "true" %>
-          <p class="spot-info spot-info-tag spot-info-diaper_stand">おむつ台</p>
         <% end %>
         <% if spot.baby_scales == "true" %>
           <p class="spot-info spot-info-tag spot-info-baby_scales">身長体重計</p>
@@ -61,18 +58,6 @@
       <% if spot.picture.nil? %>
         <p class="spot-info spot-info-picture"><%= image_tag spot.picture %></p>
       <% end %>
-      <section class="spot-action">
-        <p class="spot-action-edit">
-          <%= link_to edit_spot_path(spot.id) do %>
-            <i class="material-icons">mode edit</i>
-          <% end %>
-        </p>
-        <p class="spot-action-delete">
-          <%= link_to spot_path(spot.id), method: :delete, data: { confirm: '本当に削除していいですか？' } do %>
-            <i class="material-icons">delete</i>
-          <% end %>
-        </p>
-      </section>
     </article>
 <% end %>
 </section>
