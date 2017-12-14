@@ -23,6 +23,7 @@
         </p>
         <nav class="head-nav">
           <ul class="nav-menu">
+            <li class="nav-menu-list"><%= link_to "スポット投稿", new_spot_path %></li>
             <li class="nav-menu-list"><%= link_to "スポット一覧", spots_path %></li>
             <% if user_signed_in? %>
             <li class="nav-menu-list"><%= link_to 'マイページ', edit_user_registration_path %></li>
@@ -35,7 +36,7 @@
         </nav>
       </section>
     </header>
-    
+
     <% if controller_name == "top" %>
       <section class="top-column">
         <section class="main-visual">
@@ -44,14 +45,14 @@
           <h1>授乳室やおむつ台がすぐに見つかる</h1>
           <section class="spots-search">
             <%= search_form_for @search, url: spots_path do |f| %>
-            <%= f.search_field :name_or_region_or_address_cont, class: 'search-input' %>
+            <%= f.search_field :name_or_region_or_address_cont, class: 'search-input', placeholder: "東京都渋谷区" %>
             <%= f.submit '検索', class: 'search-btn' %>
             <% end %>
           </section>
         </section>
       </section>
     <% end %>
-    
+
     <section class="main-column">
     <%= yield %>
     </section>

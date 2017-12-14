@@ -142,7 +142,8 @@ header{
     left: 0;
     right: 0;
     form#spot_search {
-      width: 30%;
+      width: 40%;
+      box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.4);
     }
   }
 }
@@ -173,7 +174,7 @@ header{
     }
     form#spot_search {
       display: flex;
-      height: 40px;
+      height: 55px;
       width: 50%;
       margin: 0 auto;
       border: solid 1px #CCC;
@@ -183,7 +184,7 @@ header{
       .search-btn{
         width: 20%;
         background-color: #EEE;
-        font-size: 13px;
+        font-size: 16px;
         color: #666;
         @include transition(0.3s);
         &:hover{
@@ -366,4 +367,67 @@ height: 400px;
    margin-right:auto;   /* 右側マージンを自動的に空ける */
    text-align:left;     /* 中身を左側表示に戻す */
    width: 80%
+ }
+
+ .form-content{
+   i.fa{
+     margin-right: 3px;
+   }
+   .selected-file{
+     margin: 0 0 10px;
+   }
+   .confirm-picture{
+     margin-bottom: 15px;
+   }
+   .confirm-content{
+     margin: 0 0 15px;
+   }
+ }
+ .field{
+   margin: 0 0 25px;
+ }
+
+ .form-content-main{
+   margin-bottom: 10px;
+   .form-content-in{
+     padding: 40px;
+     margin-bottom: 10px;
+     background-color: #fff;
+     border-radius: 10px;
+     .actions{
+       margin-top: 15px;
+     }
+     .field{
+       input[type="email"],
+       input[type="text"],
+       input[type="password"]{
+         width: 100%;
+       }
+       .field-label{
+         font-size: 13px;
+         margin-bottom: 15px;
+         display: block;
+         text-align: left;
+       }
+     }
+     .field-remember_me{
+       font-size: 13px;
+       margin-bottom: 10px;
+       label{
+         font-weight: normal;
+       }
+     }
+     .profile-img{
+       max-width: 310px;
+       display: block;
+       margin: 20px auto;
+     }
+     .error_messages{
+       margin-bottom: 30px;
+       .alert{
+         text-align: left;
+         font-size: 13px;
+       }
+     }
+   }
  }

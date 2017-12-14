@@ -14,9 +14,6 @@ class SpotsController < ApplicationController
   def show
     @comment = @spot.comments.build
     @comments = @spot.comments
-
-    @address = '〒105-0011 東京都港区芝公園４丁目２-８'
-
   end
 
   def new
@@ -64,7 +61,7 @@ class SpotsController < ApplicationController
 
   private
     def spots_params
-      params.require(:spot).permit(:title, :memo, :picture, :name, :postal_code, :region, :address, :start_time, :close_time, :hot_water, :female_only, :female_only_room, :rental_stroller, :baby_chair, :kids_space, :microwave, :sink, :diapers_trash_bin, :diaper_stand_count, :diaper_stand, :baby_scales)
+      params.require(:spot).permit(:title, :memo, :picture, :name, :postal_code, :region, :address, :start_time, :close_time, :nursing_room, :hot_water, :female_only, :female_only_room, :rental_stroller, :baby_chair, :kids_space, :microwave, :sink, :diapers_trash_bin, :diaper_stand_count, :diaper_stand, :baby_scales)
     end
 
     def set_spot

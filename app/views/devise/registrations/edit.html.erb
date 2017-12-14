@@ -1,17 +1,16 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>アカウント編集</h2>
+
+<div class="form-content form-content-main row">
+  <div class="form-content-in col-md-4">
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+    <%= f.label :email, class: "field-label" do %>
+    <i class="fa fa-envelope-o"></i>メールアドレス
+    <% end %>
+    <%= f.email_field :email, :placeholder => "メールアドレス", autofocus: true %>
   </div>
 
   <% if @user.provider.blank? %>
@@ -21,39 +20,66 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-      <% if @minimum_password_length %>
-        <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
+      <%= f.label :password, class: "field-label" do %>
+      <i class="fa fa-lock"></i>パスワード&nbsp;※変更しない場合は未入力<br />
       <% end %>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.label :password_confirmation, class: "field-label" do %>
+      <i class="fa fa-lock"></i>パスワード(確認用)<br />
+      <% end %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
     </div>
 
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
+      <%= f.label :current_password, class: "field-label" do %>
+      <i class="fa fa-lock"></i>現在のパスワード<br />
+      <% end %>
+      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
     </div>
-    
+
   <% end %>
 
-  <div class="field">
-    <%= profile_img(@user) if profile_img(@user) %>
-    <%= f.file_field :avatar %>
-    <%= f.hidden_field :avatar_cache %>
-  </div>
+    <div class="field">
+      <%= f.label :avatar_title, class: "field-label" do %>
+      <i class="fa fa-user-circle-o"></i>プロフィール画像
+      <% end %>
+      <div class="profile-img"><%= profile_img(@user) if profile_img(@user) %></div>
+      <%= f.label :avatar, class: "btn btn-default" do %>
+      <i class="fa fa-upload"></i>ファイルを選択
+      <% end %>
+
+      <%= f.file_field :avatar, class: "hidden" %>
+      <%= f.hidden_field :avatar_cache %>
+    </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "会員情報を更新する", class: "btn btn-primary btn-block" %>
   </div>
+
+</div>
+</div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<div class="form-content form-content-sub row">
+  <div class="form-content-in col-md-4">
+    <%= button_to registration_path(resource_name), class: "btn btn-link btn-delete", data: { confirm: "本当に登録を解除しますか？" }, method: :delete do %>
+      <i class="fa fa-remove"></i>会員登録を解約する
+    <% end %>
+    <p class="link-back"><%= link_to :back, class: "btn btn-link btn-back" do %>
+    <i class="fa fa-arrow-left"></i>前の画面に戻る
+    </p>
+    <% end %>
+  </div>
+</div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<script>
+$(document).on('change', ':file', function() {
+    var input = $(this),
+    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    $('label[for="user_avatar"]').before("<p class='selected-file'>" + label + "</p>");
+});
+</script>

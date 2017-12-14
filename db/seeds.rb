@@ -7,10 +7,11 @@ Faker::Config.locale = :ja
   address = Faker::Address.street_address
   start_time = "09:00"
   close_time = "21:00"
+  nursing_room = "true"
   hot_water = "true"
   female_only = "unknown"
   rental_stroller = "false"
-  baby_chair = "unknown"
+  baby_chair = "true"
   kids_space = "unknown"
   microwave = "true"
   sink = "true"
@@ -26,6 +27,7 @@ Faker::Config.locale = :ja
                 address: address,
                 start_time: start_time,
                 close_time: close_time,
+                nursing_room: nursing_room,
                 hot_water: hot_water,
                 female_only: female_only,
                 rental_stroller: rental_stroller,

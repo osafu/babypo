@@ -8,26 +8,82 @@
   <%= f.hidden_field :address %>
   <%= f.hidden_field :start_time %>
   <%= f.hidden_field :close_time %>
+  <%= f.hidden_field :nursing_room %>
   <%= f.hidden_field :hot_water %>
   <%= f.hidden_field :female_only %>
-  <%= f.hidden_field :female_only_room %>
   <%= f.hidden_field :rental_stroller %>
   <%= f.hidden_field :baby_chair %>
   <%= f.hidden_field :kids_space %>
   <%= f.hidden_field :microwave %>
   <%= f.hidden_field :sink %>
   <%= f.hidden_field :diapers_trash_bin %>
-  <%= f.hidden_field :diaper_stand_count %>
   <%= f.hidden_field :diaper_stand %>
   <%= f.hidden_field :baby_scales %>
-
   <p>
-    <%= f.label :title %>
-    <%= @spot.title %>
+    <%= f.label :name %>
+    <%= @spot.name %>
   </p>
   <p>
-    <%= f.label :content %>
-    <%= @spot.content %>
+    <%= f.label :postal_code %>
+    <%= @spot.postal_code %>
+    <%= f.label :region %>
+    <%= @spot.region %>
+    <%= f.label :address %>
+    <%= @spot.address %>
+  </p>
+  <p>
+    <%= f.label :start_time %>
+    <%= @spot.start_time %>
+    <%= f.label :close_time %>
+    <%= @spot.close_time %>
+  </p>
+  <p>
+    <%= f.label :nursing_room %>
+    <%= @spot.nursing_room %>
+  </p>
+  <p>
+    <%= f.label :hot_water %>
+    <%= @spot.hot_water %>
+  </p>
+  <p>
+    <%= f.label :female_only %>
+    <%= @spot.female_only %>
+  </p>
+  <p>
+    <%= f.label :rental_stroller %>
+    <%= @spot.rental_stroller %>
+  </p>
+  <p>
+    <%= f.label :baby_chair %>
+    <%= @spot.baby_chair %>
+  </p>
+  <p>
+    <%= f.label :kids_space %>
+    <%= @spot.kids_space %>
+  </p>
+  <p>
+    <%= f.label :microwave %>
+    <%= @spot.microwave %>
+  </p>
+  <p>
+    <%= f.label :sink %>
+    <%= @spot.sink %>
+  </p>
+  <p>
+    <%= f.label :diapers_trash_bin %>
+    <%= @spot.diapers_trash_bin %>
+  </p>
+  <p>
+    <%= f.label :diaper_stand %>
+    <%= @spot.diaper_stand %>
+  </p>
+  <p>
+    <%= f.label :baby_scales %>
+    <%= @spot.baby_scales %>
+  </p>
+  <p>
+    <%= f.label :memo %>
+    <%= @spot.memo %>
   </p>
   <p>
   <%= hidden_field_tag :"cache[picture]", @spot.picture.cache_name %>
@@ -45,16 +101,15 @@
   <%= f.hidden_field :address %>
   <%= f.hidden_field :start_time %>
   <%= f.hidden_field :close_time %>
+  <%= f.hidden_field :nursing_room %>
   <%= f.hidden_field :hot_water %>
   <%= f.hidden_field :female_only %>
-  <%= f.hidden_field :female_only_room %>
   <%= f.hidden_field :rental_stroller %>
   <%= f.hidden_field :baby_chair %>
   <%= f.hidden_field :kids_space %>
   <%= f.hidden_field :microwave %>
   <%= f.hidden_field :sink %>
   <%= f.hidden_field :diapers_trash_bin %>
-  <%= f.hidden_field :diaper_stand_count %>
   <%= f.hidden_field :diaper_stand %>
   <%= f.hidden_field :baby_scales %>
   <%= f.submit "もどる", name: 'back' %>

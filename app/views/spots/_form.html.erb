@@ -41,9 +41,13 @@
       </div>
     </div>
     <div class="list-select-wrap">
-      <div class="spot-form-list spot-form-list-diaper_stand_count">
-        <div class="form-list-title"><%= f.label :diaper_stand_count, "おむつ台" %></div>
-        <div class="form-list-data"><%= f.select :diaper_stand_count, [["わからない", "unknown"],["ある", "true"],["ない", "false"]],class:"list-data-select" %></div>
+      <div class="spot-form-list spot-form-list-nursing_room">
+        <div class="form-list-title"><%= f.label :nursing_room, "授乳室" %></div>
+        <div class="form-list-data"><%= f.select :nursing_room, [["わからない", "unknown"],["ある", "true"],["ない", "false"]],class:"list-data-select" %></div>
+      </div>
+      <div class="spot-form-list spot-form-list-diaper_stand">
+        <div class="form-list-title"><%= f.label :diaper_stand, "おむつ台" %></div>
+        <div class="form-list-data"><%= f.select :diaper_stand, [["わからない", "unknown"],["ある", "true"],["ない", "false"]],class:"list-data-select" %></div>
       </div>
       <div class="spot-form-list spot-form-list-sink">
         <div class="form-list-title"><%= f.label :sink, "シンク・洗面台" %></div>
@@ -72,10 +76,6 @@
       <div class="spot-form-list spot-form-list-microwave">
         <div class="form-list-title"><%= f.label :microwave, "電子レンジ" %></div>
         <div class="form-list-data"><%= f.select :microwave, [["わからない", "unknown"],["ある", "true"],["ない", "false"]],class:"list-data-select" %></div>
-      </div>
-      <div class="spot-form-list spot-form-list-diaper_stand">
-        <div class="form-list-title"><%= f.label :diaper_stand, "自販機" %></div>
-        <div class="form-list-data"><%= f.select :diaper_stand, [["わからない", "unknown"],["ある", "true"],["ない", "false"]],class:"list-data-select" %></div>
       </div>
       <div class="spot-form-list spot-form-list-baby_scales">
         <div class="form-list-title"><%= f.label :baby_scales, "身長体重計" %></div>

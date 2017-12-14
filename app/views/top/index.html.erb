@@ -15,6 +15,9 @@
         </div>
       <% end %>
       <section class="spot-tags">
+        <% if spot.nursing_room == "true" %>
+          <p class="spot-info spot-info-tag spot-info-nursing_room">授乳室</p>
+        <% end %>
         <% if spot.diaper_stand == "true" %>
           <p class="spot-info spot-info-tag spot-info-diaper_stand">おむつ台</p>
         <% end %>
