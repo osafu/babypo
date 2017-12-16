@@ -1,8 +1,8 @@
 <h1>スポット一覧</h1>
 
 <section class="spots-search">
-  <%= search_form_for @search do |f| %>
-  <%= f.search_field :name_or_region_or_address_cont, class: 'search-input', placeholder: "東京都渋谷区" %>
+  <%= search_form_for @search, url: spots_path do |f| %>
+  <%= f.search_field :name_or_region_or_address_cont, class: 'search-input', placeholder: "キーワード: 東京都渋谷区など" %>
   <%= f.submit '検索', class: 'search-btn' %>
   <% end %>
 </section>
@@ -11,17 +11,19 @@
 <% @spots.each do |spot| %>
 
     <article class="spots-list">
-      <p class="spot-info spot-info-name"><%= link_to spot_path(spot) do %><%= spot.name %><% end %></p>
-
-      <p class="spot-info spot-info-address">
-        <i class="material-icons">place</i><span class="info-address"><%= spot.region %><%= spot.address %></span>
-      </p>
+      <section class="spot-info spot-info-name"><%= link_to spot_path(spot) do %><%= spot.name %><% end %></section>
+      <section class="spot-info spot-info-address">
+        <i class="material-icons">place</i><p class="info-address"><%= spot.region %><%= spot.address %></p>
+      </section>
       <% if spot.start_time.present? && spot.close_time.present? %>
-        <div class="spot-times">
-          <i class="material-icons">alarm</i><p class="spot-info spot-info-start_time"><%= spot.start_time %></p>
+      <section class="spot-info spot-info-times">
+        <i class="material-icons">alarm</i>
+        <p class="info-times">
+          <span class="spot-info spot-info-start_time"><%= spot.start_time %></span>
           <span class="dash">-</span>
-          <p class="spot-info spot-info-close_time"><%= spot.close_time %></p>
-        </div>
+          <span class="spot-info spot-info-close_time"><%= spot.close_time %></span>
+        </p>
+      </section>
       <% end %>
       <section class="spot-tags">
         <% if spot.nursing_room == "true" %>

@@ -19,9 +19,9 @@ $main-color: #4BA69C;
 $f-size-xs: 12px;
 $f-size-s: 14px;
 $f-size-m: 16px;
-$f-size-l: 20px;
+$f-size-l: 24px;
 $f-size-xl: 28px;
-$f-size-xxl: 34px;
+$f-size-xxl: 38px;
 
 @mixin font-size($size) {
   font-size:$size;
@@ -68,7 +68,7 @@ $f-size-xxl: 34px;
 
 body{
   font-family: 'Arial','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','sans-serif';
-  font-size: 14px;
+  @include font-size($f-size-m);
   background-color: #F5F5F5;
   color: #333;
 }
@@ -98,25 +98,31 @@ a{
   }
 }
 
- img{
-   max-width: 100%;
- }
+img{
+ max-width: 100%;
+}
 
- h1{
-   @include font-size($f-size-xl);
-   color: $main-color;
-   font-weight: bold;
-   margin: 20px 0 60px;
- }
+h1{
+ @include font-size($f-size-xl);
+ color: $main-color;
+ font-weight: bold;
+ margin: 20px 0 60px;
+}
+
+.icon-text{
+  display: flex;
+  align-items: flex-start;
+  i{
+    margin-right: 5px;
+  }
+  em{
+    line-height: 1.6;
+  }
+}
 
 header{
-  z-index: 2;
   color: #FFF;
-  position: absolute;
   width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
   .header-in{
     max-width: 1060px;
     margin: 0 auto;
@@ -126,10 +132,10 @@ header{
     display: flex;
     justify-content: center;
     .logo{
-      width: 10%;
+      width: 20%;
       margin-right: auto;
       .logo-img{
-        max-height:30px;
+        max-height:40px;
       }
     }
     .head-nav{
@@ -146,7 +152,6 @@ header{
         justify-content: center;
         .nav-menu-list{
           a{
-            color: #FFF;
           }
           &:not(:last-child){
             margin-right: 20px;
@@ -162,15 +167,12 @@ header{
     position:relative;
   .top-column-in{
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     background: image-url("top-image1.jpg") no-repeat 0 -240px;
     background-size: 100%;
     h1{
       color: #FFF;
-      font-size: 38px;
+      @include font-size($f-size-xxl);
       text-shadow: 0 2px 2px rgba(0,0,0,.5);
     }
     .main-search{
@@ -208,7 +210,8 @@ header{
     .search-input{
       width: 100%;
       padding: 15px;
-      font-size: $f-size-m;
+      @include font-size($f-size-m);
+      border-radius: 5px 0 0 5px;
       @include box-sizing(border-box);
       @include placeholderColor(#999);
     }
@@ -224,8 +227,9 @@ header{
       .search-btn{
         width: 20%;
         background-color: #EEE;
-        font-size: 16px;
+        @include font-size($f-size-m);
         color: #666;
+        border-radius: 0 5px 5px 0;
         @include transition(0.3s);
         &:hover{
           background-color: #DADADA;
@@ -236,7 +240,7 @@ header{
   }
 .main-column{
   max-width: 1060px;
-  margin: 64px auto 40px;
+  margin: 40px auto;
   .spots-list-wrap{
     display: flex;
     justify-content: start;
@@ -261,20 +265,28 @@ header{
     }
     .spot-info-address {
       display: flex;
-      align-items: center;
-      margin-bottom: 10px;
+      align-items: flex-start;
+      padding: 3px 0px;
+      .info-address{
+        line-height: 1.6;
+      }
     }
-    .spot-times{
+    .spot-info-times{
       display: flex;
-      align-items: center;
-      .dash{
-        margin: 0 5px;
+      align-items: flex-start;
+      padding: 3px 0px;
+      .info-times{
+        line-height: 1.6;
+        .dash{
+          margin: 0 5px;
+        }
       }
     }
     .spot-tags{
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
+      @include font-size($f-size-s);
       margin: 15px 0 0;
       .spot-info-tag{
         padding: 8px;
@@ -285,7 +297,7 @@ header{
       }
     }
     .spot-info-name{
-      font-size: 26px;
+      @include font-size($f-size-l);
       font-weight: bold;
       margin-bottom: 20px;
     }
@@ -336,15 +348,142 @@ header{
     .form-list-title{
       margin-bottom: 10px;
     }
-    .form-list-data{
-      input,
-      textarea{
-        font-size: 16px;
+  }
+}
+
+.spots-show{
+  .spots-show-in{
+    padding: 30px 25px;
+    margin: 0 0 30px 0;
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    background-color: #FFF;
+    border: solid 1px #CCC;
+    .spots-show-main{
+      display: flex;
+      .material-icons{
+        margin-right: 5px;
+        color: #666;
+      }
+      .map-column {
+        min-width: 50%;
+        margin-right: 30px;
+      }
+      .info-column {
+        padding: 20px 0 0 0;
+        .spot-info{
+          .spot-info-name{
+            @include font-size($f-size-xl);
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            color: #62A49C;
+          }
+          .spot-info-address {
+            display: flex;
+            align-items: flex-start;
+            padding: 6px 0px;
+            .info-address{
+              line-height: 1.6;
+            }
+          }
+          .spot-info-times{
+            display: flex;
+            align-items: flex-start;
+            padding: 6px 0px;
+            .info-times{
+              line-height: 1.6;
+              .dash{
+                margin: 0 5px;
+              }
+            }
+          }
+          .spot-tags{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin: 20px 0 30px;
+            .spot-info-tag{
+              padding: 10px;
+              margin: 0 5px 5px 0;
+              background-color: #4BA69C;
+              color: #FFF;
+              border-radius: 30px;
+              @include font-size($f-size-s);
+            }
+          }
+          .spot-memo{
+            margin-bottom: 20px;
+            padding: 20px 15px;
+            border-radius: 5px;
+            background-color: #F5F5F5;
+            .spot-memo-title{
+              font-weight: bold;
+              color: #666;
+              margin-bottom: 15px;
+              @include font-size($f-size-s);
+              em{
+                padding-top: 2px;
+              }
+            }
+            .spot-memo-text{
+              line-height: 1.6;
+              @include font-size($f-size-s);
+            }
+          }
+        }
+      }
+    }
+    .spot-comment{
+      margin: 50px 0 20px;
+      .comments-show-title{
         padding: 10px;
-        margin-bottom: 10px;
-        border: solid 1px #E5E5E5;
-        border-radius: 3px;
-        @include box-sizing(border-box);
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background-color: #FBF3E5;
+        i{
+          color:#9A7A61;
+        }
+        em{
+          line-height: 1.6;
+          font-weight: bold;
+          color: #9A7A61;
+        }
+      }
+      .comments-list{
+        padding: 10px 10px 20px;
+        margin-bottom: 20px;
+        border-bottom: solid 1px #CCC;
+        &:last-child{
+          border-bottom: none;
+        }
+        .comment-name{
+          color: #999;
+          margin: 20px 0 10px;
+          font-size: 14px;
+        }
+        .comment-action{
+          text-align: right;
+          margin-top: 5px;
+        }
+      }
+    }
+    .new_comment{
+      margin-top: 20px;
+      #comment_content{
+        width: 100%;
+        padding: 15px 10px;
+      }
+      .new-comment-submit{
+        margin: 0 auto 10px;
+        display: block;
+      }
+      .new-comment-back:hover{
+        text-decoration: none;
+      }
+      .new-comment-back:hover em{
+        text-decoration: underline;
       }
     }
   }
@@ -360,7 +499,7 @@ footer{
   width: 100%;
 }
 
-input[type="text"]
+input[type="text"],
 input[type="submit"],
 input[type="button"],
 textarea {
@@ -377,6 +516,15 @@ textarea {
       outline-offset: -2px;
     }
 }
+input[type="text"]{
+  @include font-size($f-size-m);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 1px #E5E5E5;
+  border-radius: 3px;
+  @include box-sizing(border-box);
+}
+
 input[type="submit"] {
     -webkit-appearance:none;
     vertical-align:middle;
@@ -384,8 +532,10 @@ input[type="submit"] {
 input[type="submit"]:hover{
   cursor: pointer;
 }
-.btn-strong-m{
-  font-size: 16px;
+
+a.btn-strong-m,
+input[type="submit"].btn-strong-m{
+  @include font-size($f-size-m);
   font-weight: bold;
   background-color: $main-color;
   padding: 20px;
@@ -394,11 +544,63 @@ input[type="submit"]:hover{
   width: 200px;
   color: #FFF;
   border: 0;
+  display: block;
+  text-align: center;
 }
-.btn-strong-m:hover{
-  @include opacity(0.8);
-  text-decoration: none;
+
+a.btn-strong-s,
+input[type="submit"].btn-strong-s{
+  @include font-size($f-size-s);
+  font-weight: bold;
+  background-color: $main-color;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 40px;
+  width: 150px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
 }
+
+a.btn-normal-m,
+input[type="submit"].btn-normal-m{
+  @include font-size($f-size-m);
+  font-weight: bold;
+  background-color: #999;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 40px;
+  width: 200px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+a.btn-normal-s,
+input[type="submit"].btn-normal-s{
+  @include font-size($f-size-s);
+  font-weight: bold;
+  background-color: #999;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 40px;
+  width: 150px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+.btn-strong-s:hover,
+.btn-strong-m:hover,
+.btn-normal-s:hover,
+.btn-normal-m:hover{
+ @include opacity(0.8);
+ text-decoration: none;
+}
+
 
 #map{
 
@@ -444,14 +646,14 @@ height: 400px;
          width: 100%;
        }
        .field-label{
-         font-size: 13px;
+         @include font-size($f-size-s);
          margin-bottom: 15px;
          display: block;
          text-align: left;
        }
      }
      .field-remember_me{
-       font-size: 13px;
+       @include font-size($f-size-s);
        margin-bottom: 10px;
        label{
          font-weight: normal;
@@ -466,21 +668,16 @@ height: 400px;
        margin-bottom: 30px;
        .alert{
          text-align: left;
-         font-size: 13px;
+         @include font-size($f-size-s);
        }
      }
    }
  }
 
-.btn-strong-m:hover{
-  @include opacity(0.8);
-  text-decoration: none;
-}
-
 #map{
-height: 400px;
-   margin-left:auto;    /* 左側マージンを自動的に空ける */
-   margin-right:auto;   /* 右側マージンを自動的に空ける */
-   text-align:left;     /* 中身を左側表示に戻す */
-   width: 80%
- }
+  height: 400px;
+  margin-left:auto;    /* 左側マージンを自動的に空ける */
+  margin-right:auto;   /* 右側マージンを自動的に空ける */
+  text-align:left;     /* 中身を左側表示に戻す */
+  width: 80%
+}

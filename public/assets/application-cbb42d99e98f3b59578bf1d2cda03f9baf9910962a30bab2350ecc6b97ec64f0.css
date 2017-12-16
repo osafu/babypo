@@ -1,0 +1,873 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+/* line 6, /Users/osafune/workspace/babypo/app/assets/stylesheets/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, /Users/osafune/workspace/babypo/app/assets/stylesheets/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, /Users/osafune/workspace/babypo/app/assets/stylesheets/reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, /Users/osafune/workspace/babypo/app/assets/stylesheets/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, /Users/osafune/workspace/babypo/app/assets/stylesheets/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 40, /Users/osafune/workspace/babypo/app/assets/stylesheets/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, /Users/osafune/workspace/babypo/app/assets/stylesheets/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 1, /Users/osafune/workspace/babypo/app/assets/stylesheets/spots.scss */
+body {
+  text-align: center;
+}
+@charset "UTF-8";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 70, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+body {
+  font-family: 'Arial','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','sans-serif';
+  font-size: 16px;
+  font-size: 1rem;
+  background-color: #F5F5F5;
+  color: #333;
+}
+
+/* line 77, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+input[type="submit"],
+input[type="button"],
+input[type="search"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+}
+/* line 86, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+input[type="submit"]:-webkit-search-decoration,
+input[type="button"]:-webkit-search-decoration,
+input[type="search"]:-webkit-search-decoration {
+  display: none;
+}
+/* line 89, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+input[type="submit"]:focus,
+input[type="button"]:focus,
+input[type="search"]:focus {
+  outline-offset: -2px;
+}
+
+/* line 94, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+a {
+  color: #4BA69C;
+  text-decoration: none;
+}
+/* line 97, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 102, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 106, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+h1 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  color: #4BA69C;
+  font-weight: bold;
+  margin: 20px 0 60px;
+}
+
+/* line 113, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.icon-text {
+  display: flex;
+  align-items: flex-start;
+}
+/* line 116, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.icon-text i {
+  margin-right: 5px;
+}
+/* line 119, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.icon-text em {
+  line-height: 1.6;
+}
+
+/* line 124, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+header {
+  color: #FFF;
+  width: 100%;
+}
+/* line 127, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+header .header-in {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 20px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+}
+/* line 135, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+header .header-in .logo {
+  width: 20%;
+  margin-right: auto;
+}
+/* line 138, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+header .header-in .logo .logo-img {
+  max-height: 40px;
+}
+/* line 142, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+header .header-in .head-nav {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 148, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+header .header-in .head-nav .nav-menu {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 157, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+header .header-in .head-nav .nav-menu .nav-menu-list:not(:last-child) {
+  margin-right: 20px;
+}
+
+/* line 166, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.top-column {
+  height: 540px;
+  position: relative;
+}
+/* line 169, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.top-column .top-column-in {
+  height: 100%;
+  width: 100%;
+  background: url(/assets/top-image1-f1544d5adfa301ff3a479897c8220ac8122aea370f3efae644cb468230f54cc3.jpg) no-repeat 0 -240px;
+  background-size: 100%;
+}
+/* line 174, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.top-column .top-column-in h1 {
+  color: #FFF;
+  font-size: 38px;
+  font-size: 2.375rem;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+/* line 179, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.top-column .top-column-in .main-search {
+  position: absolute;
+  top: 160px;
+  width: 80%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+/* line 186, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.top-column .top-column-in .main-search form#spot_search {
+  width: 40%;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* line 194, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-visual {
+  width: 100%;
+  height: 100%;
+}
+/* line 197, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-visual:before {
+  content: "";
+  background-color: #000;
+  opacity: 0.3;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+/* line 205, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-visual img {
+  width: 100%;
+}
+
+/* line 209, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search {
+  margin: 40px 0 60px;
+}
+/* line 211, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search .search-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-size: 1rem;
+  border-radius: 5px 0 0 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 51, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search .search-input:placeholder-shown {
+  color: #999;
+}
+/* line 54, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search .search-input::-webkit-input-placeholder {
+  color: #999;
+}
+/* line 57, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search .search-input:-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+/* line 61, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search .search-input::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+/* line 65, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search .search-input:-ms-input-placeholder {
+  color: #999;
+}
+/* line 219, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search form#spot_search {
+  display: flex;
+  height: 55px;
+  width: 50%;
+  margin: 0 auto;
+  border: solid 1px #CCC;
+  border-radius: 5px;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 228, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search form#spot_search .search-btn {
+  width: 20%;
+  background-color: #EEE;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #666;
+  border-radius: 0 5px 5px 0;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+/* line 235, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-search form#spot_search .search-btn:hover {
+  background-color: #DADADA;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 242, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column {
+  max-width: 1060px;
+  margin: 40px auto;
+}
+/* line 245, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap {
+  display: flex;
+  justify-content: start;
+  flex-flow: wrap;
+  margin-bottom: 40px;
+}
+/* line 250, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spots-list {
+  padding: 30px 25px;
+  margin: 0 0 30px 0;
+  border-radius: 5px;
+  width: 32%;
+  text-align: left;
+  box-sizing: border-box;
+  background-color: #FFF;
+  border: solid 1px #CCC;
+}
+/* line 259, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spots-list:not(:nth-child(3n)) {
+  margin-right: 2%;
+}
+/* line 263, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .material-icons {
+  margin-right: 5px;
+  color: #666;
+}
+/* line 267, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spot-info-address {
+  display: flex;
+  align-items: flex-start;
+  padding: 3px 0px;
+}
+/* line 271, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spot-info-address .info-address {
+  line-height: 1.6;
+}
+/* line 275, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spot-info-times {
+  display: flex;
+  align-items: flex-start;
+  padding: 3px 0px;
+}
+/* line 279, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spot-info-times .info-times {
+  line-height: 1.6;
+}
+/* line 281, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spot-info-times .info-times .dash {
+  margin: 0 5px;
+}
+/* line 286, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spot-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin: 15px 0 0;
+}
+/* line 292, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spot-tags .spot-info-tag {
+  padding: 8px;
+  margin: 0 5px 5px 0;
+  background-color: #4BA69C;
+  color: #FFF;
+  border-radius: 30px;
+}
+/* line 300, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spots-list-wrap .spot-info-name {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+/* line 307, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form-wrap {
+  padding: 30px;
+  background-color: #FFF;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 316, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form .list-time-wrap {
+  display: flex;
+}
+/* line 319, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form .list-select-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-bottom: 30px;
+}
+/* line 324, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form .list-select-wrap .form-list-title {
+  text-align: center;
+}
+/* line 327, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form .list-select-wrap .spot-form-list {
+  padding: 10px;
+  margin: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 120px;
+  text-align: center;
+}
+/* line 335, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form #spot_memo {
+  width: 100%;
+}
+/* line 338, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form .spot-form-list {
+  margin-bottom: 15px;
+  text-align: left;
+}
+/* line 342, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form .spot-form-list .form-list-data #spot_name,
+.main-column .spot-form .spot-form-list .form-list-data #spot_address {
+  width: 100%;
+}
+/* line 346, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form .spot-form-list-picture {
+  text-align: center;
+}
+/* line 349, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.main-column .spot-form .form-list-title {
+  margin-bottom: 10px;
+}
+
+/* line 356, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in {
+  padding: 30px 25px;
+  margin: 0 0 30px 0;
+  border-radius: 5px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  background-color: #FFF;
+  border: solid 1px #CCC;
+}
+/* line 365, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main {
+  display: flex;
+}
+/* line 367, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .material-icons {
+  margin-right: 5px;
+  color: #666;
+}
+/* line 371, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .map-column {
+  min-width: 50%;
+  margin-right: 30px;
+}
+/* line 375, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column {
+  padding: 20px 0 0 0;
+}
+/* line 378, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-info-name {
+  font-size: 28px;
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  color: #62A49C;
+}
+/* line 384, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-info-address {
+  display: flex;
+  align-items: flex-start;
+  padding: 6px 0px;
+}
+/* line 388, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-info-address .info-address {
+  line-height: 1.6;
+}
+/* line 392, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-info-times {
+  display: flex;
+  align-items: flex-start;
+  padding: 6px 0px;
+}
+/* line 396, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-info-times .info-times {
+  line-height: 1.6;
+}
+/* line 398, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-info-times .info-times .dash {
+  margin: 0 5px;
+}
+/* line 403, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 20px 0 30px;
+}
+/* line 408, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-tags .spot-info-tag {
+  padding: 10px;
+  margin: 0 5px 5px 0;
+  background-color: #4BA69C;
+  color: #FFF;
+  border-radius: 30px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+/* line 417, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-memo {
+  margin-bottom: 20px;
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #F5F5F5;
+}
+/* line 422, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-memo .spot-memo-title {
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+/* line 427, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-memo .spot-memo-title em {
+  padding-top: 2px;
+}
+/* line 431, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spots-show-main .info-column .spot-info .spot-memo .spot-memo-text {
+  line-height: 1.6;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+/* line 439, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spot-comment {
+  margin: 50px 0 20px;
+}
+/* line 441, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spot-comment .comments-show-title {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #FBF3E5;
+}
+/* line 446, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spot-comment .comments-show-title i {
+  color: #9A7A61;
+}
+/* line 449, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spot-comment .comments-show-title em {
+  line-height: 1.6;
+  font-weight: bold;
+  color: #9A7A61;
+}
+/* line 455, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spot-comment .comments-list {
+  padding: 10px 10px 20px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #CCC;
+}
+/* line 459, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spot-comment .comments-list:last-child {
+  border-bottom: none;
+}
+/* line 462, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spot-comment .comments-list .comment-name {
+  color: #999;
+  margin: 20px 0 10px;
+  font-size: 14px;
+}
+/* line 467, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .spot-comment .comments-list .comment-action {
+  text-align: right;
+  margin-top: 5px;
+}
+/* line 473, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .new_comment {
+  margin-top: 20px;
+}
+/* line 475, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .new_comment #comment_content {
+  width: 100%;
+  padding: 15px 10px;
+}
+/* line 479, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .new_comment .new-comment-submit {
+  margin: 0 auto 10px;
+  display: block;
+}
+/* line 483, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .new_comment .new-comment-back:hover {
+  text-decoration: none;
+}
+/* line 486, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.spots-show .spots-show-in .new_comment .new-comment-back:hover em {
+  text-decoration: underline;
+}
+
+/* line 493, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+footer {
+  box-sizing: border-box;
+  color: #FFF;
+  margin-top: 80px;
+  padding: 40px;
+  background-color: #333;
+  text-align: center;
+  width: 100%;
+}
+
+/* line 503, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+input[type="text"],
+input[type="submit"],
+input[type="button"],
+textarea {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 513, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+input[type="text"]::-webkit-search-decoration,
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration,
+textarea::-webkit-search-decoration {
+  display: none;
+}
+/* line 516, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+input[type="text"]:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+textarea:focus {
+  outline-offset: -2px;
+}
+
+/* line 520, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+input[type="text"] {
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 1px #E5E5E5;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 529, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+input[type="submit"] {
+  -webkit-appearance: none;
+  vertical-align: middle;
+}
+
+/* line 533, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+/* line 537, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+a.btn-strong-m,
+input[type="submit"].btn-strong-m {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #4BA69C;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 40px;
+  width: 200px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+/* line 552, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+a.btn-strong-s,
+input[type="submit"].btn-strong-s {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  background-color: #4BA69C;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 40px;
+  width: 150px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+/* line 567, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+a.btn-normal-m,
+input[type="submit"].btn-normal-m {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #999;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 40px;
+  width: 200px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+/* line 582, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+a.btn-normal-s,
+input[type="submit"].btn-normal-s {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  background-color: #999;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 40px;
+  width: 150px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+/* line 597, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.btn-strong-s:hover,
+.btn-strong-m:hover,
+.btn-normal-s:hover,
+.btn-normal-m:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  text-decoration: none;
+}
+
+/* line 606, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+#map {
+  height: 400px;
+  margin-left: auto;
+  /* 左側マージンを自動的に空ける */
+  margin-right: auto;
+  /* 右側マージンを自動的に空ける */
+  text-align: left;
+  /* 中身を左側表示に戻す */
+  width: 80%;
+}
+
+/* line 616, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content i.fa {
+  margin-right: 3px;
+}
+/* line 619, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content .selected-file {
+  margin: 0 0 10px;
+}
+/* line 622, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content .confirm-picture {
+  margin-bottom: 15px;
+}
+/* line 625, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content .confirm-content {
+  margin: 0 0 15px;
+}
+
+/* line 629, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.field {
+  margin: 0 0 25px;
+}
+
+/* line 633, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main {
+  margin-bottom: 10px;
+}
+/* line 635, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main .form-content-in {
+  padding: 40px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+/* line 640, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main .form-content-in .actions {
+  margin-top: 15px;
+}
+/* line 644, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main .form-content-in .field input[type="email"],
+.form-content-main .form-content-in .field input[type="text"],
+.form-content-main .form-content-in .field input[type="password"] {
+  width: 100%;
+}
+/* line 649, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main .form-content-in .field .field-label {
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin-bottom: 15px;
+  display: block;
+  text-align: left;
+}
+/* line 656, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main .form-content-in .field-remember_me {
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+}
+/* line 659, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main .form-content-in .field-remember_me label {
+  font-weight: normal;
+}
+/* line 663, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main .form-content-in .profile-img {
+  max-width: 310px;
+  display: block;
+  margin: 20px auto;
+}
+/* line 668, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main .form-content-in .error_messages {
+  margin-bottom: 30px;
+}
+/* line 670, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+.form-content-main .form-content-in .error_messages .alert {
+  text-align: left;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+/* line 678, /Users/osafune/workspace/babypo/app/assets/stylesheets/application.scss */
+#map {
+  height: 400px;
+  margin-left: auto;
+  /* 左側マージンを自動的に空ける */
+  margin-right: auto;
+  /* 右側マージンを自動的に空ける */
+  text-align: left;
+  /* 中身を左側表示に戻す */
+  width: 80%;
+}

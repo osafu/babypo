@@ -1,15 +1,21 @@
-<ul>
+<ul class="comments">
   <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
-      <li>
-        <p><%= comment.user.name %>さんがコメントしました。</p>
-        <p><%= comment.content %></p>
+      <li class="comments-list">
+        <p class="comment-content"><%= comment.content %></p>
+        <p class="comment-name">投稿者&nbsp;:&nbsp;<%= comment.user.name %></p>
         <% if user_signed_in? %>
           <% if current_user.id == comment.user.id %>
+          <div class="comment-action">
             <p>
-              <%= link_to '', edit_spot_comment_path(spot, comment), class: "comment-edit" %>
-              <%= link_to '', spot_comment_path(spot, comment), class: "comment-delete", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
+              <%= link_to edit_spot_comment_path(spot, comment), class: "comment-edit" do %>
+                <i class="material-icons">create</i>
+              <% end %>
+              <%= link_to spot_comment_path(spot, comment), class: "comment-delete", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } do %>
+                <i class="material-icons">delete</i>
+              <% end %>
             </p>
+          </div>
           <% end %>
         <% end %>
       </li>
