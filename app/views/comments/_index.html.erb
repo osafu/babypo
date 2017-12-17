@@ -1,10 +1,10 @@
-<ul class="comments">
-  <% comments.each do |comment| %>
-    <% unless comment.id.nil? %>
-      <li class="comments-list">
-        <p class="comment-content"><%= comment.content %></p>
-        <p class="comment-name">投稿者&nbsp;:&nbsp;<%= comment.user.name %></p>
-        <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <ul class="comments">
+    <% comments.each do |comment| %>
+      <% unless comment.id.nil? %>
+        <li class="comments-list">
+          <p class="comment-content"><%= comment.content %></p>
+          <p class="comment-name">投稿者&nbsp;:&nbsp;<%= comment.user.name %></p>
           <% if current_user.id == comment.user.id %>
           <div class="comment-action">
             <p>
@@ -17,8 +17,13 @@
             </p>
           </div>
           <% end %>
-        <% end %>
-      </li>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+<% else %>
+<div class="not-signin-msg">
+  <p class="msg-main">コメントは会員様のみご覧になれます。</p>
+  <p class="msg-sub">※すでに会員の方は<%= link_to 'ログイン', new_user_session_path  %>後にご覧ください。</p>
+</div>
+<% end %>
