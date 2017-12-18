@@ -19,9 +19,9 @@
       <section class="spot-info spot-info-times">
         <i class="material-icons">alarm</i>
         <p class="info-times">
-          <span class="spot-info spot-info-start_time"><%= spot.start_time %></span>
+          <span class="spot-info spot-info-start_time"><%= spot.start_time.strftime("%H:%M") %></span>
           <span class="dash">-</span>
-          <span class="spot-info spot-info-close_time"><%= spot.close_time %></span>
+          <span class="spot-info spot-info-close_time"><%= spot.close_time.strftime("%H:%M") %></span>
         </p>
       </section>
       <% end %>

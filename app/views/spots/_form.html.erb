@@ -23,7 +23,7 @@
     </div>
     <div class="spot-form-list spot-form-list-region">
       <div class="form-list-title"><%= f.label :region, "都道府県" %></div>
-      <div class="form-list-data"><%= f.text_field :region %></div>
+      <div class="form-list-data"><%= f.select :region, region_list, :selected=>"東京都" %></div>
     </div>
     <div class="spot-form-list spot-form-list-address">
       <div class="form-list-title"><%= f.label :address, "所在地" %></div>
@@ -32,12 +32,12 @@
     <div class="list-time-wrap">
       <div class="spot-form-list spot-form-list-start_time">
         <div class="form-list-title"><%= f.label :start_time, "営業開始時間" %></div>
-        <div class="form-list-data"><%= f.text_field :start_time %></div>
+        <div class="form-list-data"><%= f.time_field :start_time, class:"list-data-time_select" %></div>
       </div>
-      <span>~</span>
+      <span class="time-from-mark">~</span>
       <div class="spot-form-list spot-form-list-close_time">
         <div class="form-list-title"><%= f.label :close_time, "営業終了時間" %></div>
-        <div class="form-list-data"><%= f.text_field :close_time %></div>
+        <div class="form-list-data"><%= f.time_field :close_time, class:"list-data-time_select" %></div>
       </div>
     </div>
     <div class="list-select-wrap">

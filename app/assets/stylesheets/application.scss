@@ -74,6 +74,7 @@ body{
 }
 
 input[type="submit"],
+input[type="time"],
 input[type="button"],
 input[type="search"]{
   border-radius: 0;
@@ -89,6 +90,103 @@ input[type="search"]{
       outline-offset: -2px;
     }
 }
+
+select,
+input[type="text"],
+input[type="time"],
+input[type="submit"],
+input[type="button"],
+textarea {
+  @include font-size($f-size-m);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 1px #E5E5E5;
+  border-radius: 3px;
+  @include box-sizing(border-box);
+  &::-webkit-search-decoration {
+    display: none;
+  }
+  &:focus {
+    outline-offset: -2px;
+  }
+}
+input[type="submit"]:hover{
+  cursor: pointer;
+}
+select{
+  @include font-size($f-size-m);
+  height: 40px;
+  background-color: #FFF;
+}
+
+a.btn-strong-m,
+input[type="submit"].btn-strong-m{
+  @include font-size($f-size-m);
+  font-weight: bold;
+  background-color: $main-color;
+  padding: 20px;
+  margin: 40px auto 20px;
+  border-radius: 40px;
+  width: 200px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+a.btn-strong-s,
+input[type="submit"].btn-strong-s{
+  @include font-size($f-size-s);
+  font-weight: bold;
+  background-color: $main-color;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 40px;
+  width: 150px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+a.btn-normal-m,
+input[type="submit"].btn-normal-m{
+  @include font-size($f-size-m);
+  font-weight: bold;
+  background-color: #999;
+  padding: 20px;
+  margin: 40px auto 20px;
+  border-radius: 40px;
+  width: 200px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+a.btn-normal-s,
+input[type="submit"].btn-normal-s{
+  @include font-size($f-size-s);
+  font-weight: bold;
+  background-color: #999;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 40px;
+  width: 150px;
+  color: #FFF;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+
+.btn-strong-s:hover,
+.btn-strong-m:hover,
+.btn-normal-s:hover,
+.btn-normal-m:hover{
+ @include opacity(0.8);
+ text-decoration: none;
+}
+
 
 a{
   color: $main-color;
@@ -231,6 +329,9 @@ header{
         @include font-size($f-size-m);
         color: #666;
         border-radius: 0 5px 5px 0;
+        padding: 15px;
+        box-sizing: border-box;
+        margin: 0;
         @include transition(0.3s);
         &:hover{
           background-color: #DADADA;
@@ -278,9 +379,6 @@ header{
       padding: 3px 0px;
       .info-times{
         line-height: 1.6;
-        .dash{
-          margin: 0 5px;
-        }
       }
     }
     .spot-tags{
@@ -315,6 +413,10 @@ header{
   .spot-form{
     .list-time-wrap{
       display: flex;
+      align-items: center;
+      .time-from-mark{
+        margin: 0 1em;
+      }
     }
     .list-select-wrap{
       display: flex;
@@ -323,6 +425,7 @@ header{
       margin-bottom: 30px;
       .form-list-title{
         text-align: center;
+        @include font-size($f-size-s);
       }
       .spot-form-list{
         padding: 10px;
@@ -509,112 +612,8 @@ footer{
   width: 100%;
 }
 
-input[type="text"],
-input[type="submit"],
-input[type="button"],
-textarea {
-  border-radius: 0;
-  -webkit-box-sizing: content-box;
-  -webkit-appearance: button;
-  appearance: button;
-  border: none;
-  @include box-sizing(border-box);
-    &::-webkit-search-decoration {
-      display: none;
-    }
-    &:focus {
-      outline-offset: -2px;
-    }
-}
-input[type="text"]{
-  @include font-size($f-size-m);
-  padding: 10px;
-  margin-bottom: 10px;
-  border: solid 1px #E5E5E5;
-  border-radius: 3px;
-  @include box-sizing(border-box);
-}
-
-input[type="submit"] {
-    -webkit-appearance:none;
-    vertical-align:middle;
-}
-input[type="submit"]:hover{
-  cursor: pointer;
-}
-
-a.btn-strong-m,
-input[type="submit"].btn-strong-m{
-  @include font-size($f-size-m);
-  font-weight: bold;
-  background-color: $main-color;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 40px;
-  width: 200px;
-  color: #FFF;
-  border: 0;
-  display: block;
-  text-align: center;
-}
-
-a.btn-strong-s,
-input[type="submit"].btn-strong-s{
-  @include font-size($f-size-s);
-  font-weight: bold;
-  background-color: $main-color;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 40px;
-  width: 150px;
-  color: #FFF;
-  border: 0;
-  display: block;
-  text-align: center;
-}
-
-a.btn-normal-m,
-input[type="submit"].btn-normal-m{
-  @include font-size($f-size-m);
-  font-weight: bold;
-  background-color: #999;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 40px;
-  width: 200px;
-  color: #FFF;
-  border: 0;
-  display: block;
-  text-align: center;
-}
-
-a.btn-normal-s,
-input[type="submit"].btn-normal-s{
-  @include font-size($f-size-s);
-  font-weight: bold;
-  background-color: #999;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 40px;
-  width: 150px;
-  color: #FFF;
-  border: 0;
-  display: block;
-  text-align: center;
-}
-
-.btn-strong-s:hover,
-.btn-strong-m:hover,
-.btn-normal-s:hover,
-.btn-normal-m:hover{
- @include opacity(0.8);
- text-decoration: none;
-}
-
-
 #map{
-
-height: 400px;
+  height: 400px;
    margin-left:auto;    /* 左側マージンを自動的に空ける */
    margin-right:auto;   /* 右側マージンを自動的に空ける */
    text-align:left;     /* 中身を左側表示に戻す */
