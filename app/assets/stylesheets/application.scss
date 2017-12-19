@@ -16,10 +16,10 @@
 
 $main-color: #4BA69C;
 
-$f-size-xs: 12px;
-$f-size-s: 14px;
-$f-size-m: 16px;
-$f-size-l: 24px;
+$f-size-xs: 11px;
+$f-size-s: 12px;
+$f-size-m: 14px;
+$f-size-l: 20px;
 $f-size-xl: 28px;
 $f-size-xxl: 38px;
 
@@ -75,6 +75,8 @@ body{
 
 input[type="submit"],
 input[type="time"],
+input[type="email"],
+input[type="password"],
 input[type="button"],
 input[type="search"]{
   border-radius: 0;
@@ -94,6 +96,8 @@ input[type="search"]{
 select,
 input[type="text"],
 input[type="time"],
+input[type="email"],
+input[type="password"],
 input[type="submit"],
 input[type="button"],
 textarea {
@@ -208,13 +212,11 @@ h1{
 }
 
 .icon-text{
-  display: flex;
-  align-items: flex-start;
   i{
-    margin-right: 5px;
+    margin-right: 4px;
+    vertical-align: middle;
   }
   em{
-    line-height: 1.6;
   }
 }
 
@@ -233,7 +235,7 @@ header{
       width: 20%;
       margin-right: auto;
       .logo-img{
-        max-height:40px;
+        max-height:30px;
       }
     }
     .head-nav{
@@ -328,6 +330,7 @@ header{
         background-color: #EEE;
         @include font-size($f-size-m);
         color: #666;
+        border: none;
         border-radius: 0 5px 5px 0;
         padding: 15px;
         box-sizing: border-box;
@@ -528,7 +531,7 @@ header{
               margin-bottom: 15px;
               @include font-size($f-size-s);
               em{
-                padding-top: 2px;
+                padding-top: 4px;
               }
             }
             .spot-memo-text{
@@ -635,14 +638,15 @@ footer{
    }
  }
  .field{
-   margin: 0 0 25px;
+   margin: 0 0 15px;
  }
 
  .form-content-main{
    margin-bottom: 10px;
    .form-content-in{
      padding: 40px;
-     margin-bottom: 10px;
+     margin: 0 auto 10px;
+     width:30%;
      background-color: #fff;
      border-radius: 10px;
      .actions{
@@ -656,7 +660,7 @@ footer{
        }
        .field-label{
          @include font-size($f-size-s);
-         margin-bottom: 15px;
+         margin-bottom: 5px;
          display: block;
          text-align: left;
        }

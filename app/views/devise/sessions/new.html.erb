@@ -1,19 +1,19 @@
-<h2>ログイン</h2>
+<h1>ログイン</h1>
 
-<div class="form-content form-content-main row">
-  <div class="form-content-in col-md-4">
+<div class="form-content form-content-main">
+  <div class="form-content-in">
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email, class: "field-label" do %>
-    <i class="fa fa-envelope-o"></i>メールアドレス
+    <p class="icon-text"><i class="material-icons">mail_outline</i><em>メールアドレス</em></p>
     <% end %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :password, class: "field-label" do %>
-    <i class="fa fa-lock"></i>パスワード
+    <p class="icon-text"><i class="material-icons">lock_outline</i><em>パスワード</em></p>
     <% end %>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
@@ -34,7 +34,7 @@
 </div>
 
 <div class="form-content form-content-sub row">
-  <div class="form-content-in col-md-4">
+  <div class="form-content-in">
 
 <%= render "devise/shared/links" %>
 
