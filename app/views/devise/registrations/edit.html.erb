@@ -1,4 +1,4 @@
-<h2>アカウント編集</h2>
+<h1>アカウント編集</h1>
 
 <div class="form-content form-content-main row">
   <div class="form-content-in col-md-4">
@@ -44,11 +44,11 @@
 
     <div class="field">
       <%= f.label :avatar_title, class: "field-label" do %>
-      <i class="fa fa-user-circle-o"></i>プロフィール画像
+      <i class="material-icons">file_upload</i>プロフィール画像
       <% end %>
       <div class="profile-img"><%= profile_img(@user) if profile_img(@user) %></div>
-      <%= f.label :avatar, class: "btn btn-default" do %>
-      <i class="fa fa-upload"></i>ファイルを選択
+      <%= f.label :avatar, class: "btn btn-upload" do %>
+      <p class="icon-text"><i class="material-icons">file_upload</i><em>ファイルを選択</em></p>
       <% end %>
 
       <%= f.file_field :avatar, class: "hidden" %>
@@ -56,7 +56,7 @@
     </div>
 
   <div class="actions">
-    <%= f.submit "会員情報を更新する", class: "btn btn-primary btn-block" %>
+    <%= f.submit "会員情報を更新する", class: "btn-strong-m" %>
   </div>
 
 </div>
@@ -65,7 +65,7 @@
 
 <div class="form-content form-content-sub row">
   <div class="form-content-in col-md-4">
-    <%= button_to registration_path(resource_name), class: "btn btn-link btn-delete", data: { confirm: "本当に登録を解除しますか？" }, method: :delete do %>
+    <%= button_to registration_path(resource_name), class: "shared-link", data: { confirm: "本当に登録を解除しますか？" }, method: :delete do %>
       <i class="fa fa-remove"></i>会員登録を解約する
     <% end %>
     <p class="link-back"><%= link_to :back, class: "btn btn-link btn-back" do %>

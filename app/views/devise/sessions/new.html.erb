@@ -26,14 +26,23 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "ログイン", class: "btn btn-success btn-block btn-login" %>
+    <%= f.submit "ログイン", class: "btn-strong-m" %>
   </div>
+
+  <div class="provider-login">
+    <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <%= link_to "#{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider), class: "btn-provider btn-provider-#{provider}" %>
+      <% end -%>
+    <% end -%>
+  </div>
+
 <% end %>
 
 </div>
 </div>
 
-<div class="form-content form-content-sub row">
+<div class="form-content form-content-sub">
   <div class="form-content-in">
 
 <%= render "devise/shared/links" %>

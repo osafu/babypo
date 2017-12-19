@@ -5,16 +5,16 @@
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= devise_error_messages! %>
-    
+
       <div class="field">
         <%= f.label :email, class: "field-label" do %>
-        <i class="fa fa-envelope-o"></i>メールアドレス
+        <p class="icon-text"><i class="material-icons">mail_outline</i><em>メールアドレス</em></p>
         <% end %>
         <%= f.email_field :email, autofocus: true %>
       </div>
-    
+
       <div class="actions">
-        <%= f.submit "パスワードをリセット" %>
+        <%= f.submit "パスワードをリセット", class: "btn-strong-m" %>
       </div>
     <% end %>
 

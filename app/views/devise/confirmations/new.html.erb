@@ -1,16 +1,30 @@
-<h2>Resend confirmation instructions</h2>
+<h1>確認メール再送信</h1>
+
+<div class="form-content form-content-main">
+  <div class="form-content-in">
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, class: "field-label" do %>
+    <p class="icon-text"><i class="material-icons">mail_outline</i><em>メールアドレス</em></p>
+    <% end %>
     <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+    <%= f.submit "確認メール再送信", class: "btn-strong-m" %>
   </div>
 <% end %>
 
+</div>
+</div>
+
+<div class="form-content form-content-sub">
+  <div class="form-content-in">
+
 <%= render "devise/shared/links" %>
+
+</div>
+</div>

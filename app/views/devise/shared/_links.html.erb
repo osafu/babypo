@@ -1,25 +1,19 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "ログイン", new_session_path(resource_name), class: "btn-login"  %><br />
+  <p class="shared-link"><%= link_to "ログイン", new_session_path(resource_name), class: "btn-login"  %></p>
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "ユーザー登録", new_registration_path(resource_name), class: "btn-registrations" %><br />
+  <p class="shared-link"><%= link_to "ユーザー登録", new_registration_path(resource_name), class: "btn-registrations" %></p>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "パスワードの再発行", new_password_path(resource_name), class: "btn-password" %><br />
+  <p class="shared-link"><%= link_to "パスワードの再発行", new_password_path(resource_name), class: "btn-password" %></p>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "確認メールの再送信", new_confirmation_path(resource_name), class: "btn-confirmation" %><br />
+  <p class="shared-link"><%= link_to "確認メールの再送信", new_confirmation_path(resource_name), class: "btn-confirmation" %></p>
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "アカウント凍結解除メールの再送信", new_unlock_path(resource_name), class: "btn-unlock" %><br />
-<% end -%>
-
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "#{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider), class: "btn-provider btn-provider-#{provider}" %><br />
-  <% end -%>
+  <p class="shared-link"><%= link_to "アカウント凍結解除メールの再送信", new_unlock_path(resource_name), class: "btn-unlock" %></p>
 <% end -%>

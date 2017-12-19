@@ -8,7 +8,9 @@
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.label :password, "New password" %><br />
+    <%= f.label :password, class: "field-label" do %>
+    <p class="icon-text"><i class="material-icons">lock_outline</i><em>新しいパスワード</em></p>
+    <% end %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
     <% end %>
@@ -16,7 +18,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.label :password, class: "field-label" do %>
+    <p class="icon-text"><i class="material-icons">lock_outline</i><em>新しいパスワードの確認</em></p>
+    <% end %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
