@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171203151920) do
+ActiveRecord::Schema.define(version: 20171219160509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20171203151920) do
     t.string "diaper_stand"
     t.string "baby_scales"
     t.text "memo"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
