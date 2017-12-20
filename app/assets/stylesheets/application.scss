@@ -145,7 +145,7 @@ input[type="submit"].btn-strong-m{
   background-color: $main-color;
   padding: 20px;
   margin: 40px auto 20px;
-  border-radius: 40px;
+  border-radius: 5px;
   width: 200px;
   color: #FFF;
   border: 0;
@@ -160,7 +160,7 @@ input[type="submit"].btn-strong-s{
   background-color: $main-color;
   padding: 10px;
   margin: 10px auto;
-  border-radius: 40px;
+  border-radius: 5px;
   width: 150px;
   color: #FFF;
   border: 0;
@@ -175,7 +175,7 @@ input[type="submit"].btn-normal-m{
   background-color: #999;
   padding: 20px;
   margin: 40px auto 20px;
-  border-radius: 40px;
+  border-radius: 5px;
   width: 200px;
   color: #FFF;
   border: 0;
@@ -190,7 +190,7 @@ input[type="submit"].btn-normal-s{
   background-color: #999;
   padding: 10px;
   margin: 10px auto;
-  border-radius: 40px;
+  border-radius: 5px;
   width: 150px;
   color: #FFF;
   border: 0;
@@ -213,7 +213,7 @@ input[type="submit"].btn-normal-s{
   background-color: #999;
   padding: 10px;
   margin: 10px auto;
-  border-radius: 40px;
+  border-radius: 5px;
   width: 150px;
   color: #FFF;
   border: 0;
@@ -281,6 +281,12 @@ h1{
  margin: 20px 0 60px;
 }
 
+i.material-icons{
+  color: #666;
+  vertical-align: middle;
+  line-height: 23px;
+}
+
 .icon-text{
   i{
     margin: -4px 4px 0 0;
@@ -339,6 +345,7 @@ header{
 
 .top-column{
     position:relative;
+    margin-bottom: 40px;
   .top-column-in{
     max-height: 480px;
     width: 100%;
@@ -420,7 +427,7 @@ header{
   }
 .main-column{
   max-width: 1060px;
-  margin: 40px auto;
+  margin: 20px auto 40px;
   .spots-list-wrap{
     display: flex;
     justify-content: start;
@@ -438,9 +445,6 @@ header{
       &:not(:nth-child(3n)){
         margin-right: 2%;
       }
-    }
-    .material-icons{
-      color: #666;
     }
     .spot-info-address {
       display: flex;
@@ -530,6 +534,22 @@ header{
       margin-bottom: 10px;
     }
   }
+  .confirm-wrap{
+    .form-list-title{
+      background-color: #F5F5F5;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    .spot-info-tag {
+      margin-right: 1em;
+    }
+    input[type="submit"].btn-normal-m{
+      margin-top: 20px;
+    }
+    .spot-form-list-picture{
+      margin-top: 60px;
+    }
+  }
 }
 
 .spots-show{
@@ -548,9 +568,13 @@ header{
         margin-right: 5px;
         color: #666;
       }
-      .map-column {
+      .caption-column {
         min-width: 50%;
+        max-width: 50%;
         margin-right: 30px;
+        #map{
+          margin-bottom: 30px;
+        }
       }
       .info-column {
         padding: 20px 0 0 0;

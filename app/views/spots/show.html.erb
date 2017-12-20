@@ -1,8 +1,13 @@
 <section class="spots-show">
   <section class="spots-show-in">
     <section class="spots-show-main">
-      <section class="map-column">
+      <section class="caption-column">
         <section id="map" style="width:100%; height:400px"></section>
+        <% if @spot.picture != "unknown" %>
+          <section>
+            <%= image_tag @spot.picture %>
+          </section>
+        <% end %>
       </section>
       <section class="info-column">
         <section class="spot-info">

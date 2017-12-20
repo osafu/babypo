@@ -1,116 +1,122 @@
-<h2>確認画面</h2>
+<h1>確認画面</h1>
 
-<%= form_for(@spot) do |f| %>
-  <%= f.hidden_field :name %>
-  <%= f.hidden_field :memo %>
-  <%= f.hidden_field :postal_code %>
-  <%= f.hidden_field :region %>
-  <%= f.hidden_field :address %>
-  <%= f.hidden_field :start_time %>
-  <%= f.hidden_field :close_time %>
-  <%= f.hidden_field :nursing_room %>
-  <%= f.hidden_field :hot_water %>
-  <%= f.hidden_field :female_only %>
-  <%= f.hidden_field :rental_stroller %>
-  <%= f.hidden_field :baby_chair %>
-  <%= f.hidden_field :kids_space %>
-  <%= f.hidden_field :microwave %>
-  <%= f.hidden_field :sink %>
-  <%= f.hidden_field :diapers_trash_bin %>
-  <%= f.hidden_field :diaper_stand %>
-  <%= f.hidden_field :baby_scales %>
-  <p>
-    <%= f.label :name %>
-    <%= @spot.name %>
-  </p>
-  <p>
-    <%= f.label :postal_code %>
-    <%= @spot.postal_code %>
-    <%= f.label :region %>
-    <%= @spot.region %>
-    <%= f.label :address %>
-    <%= @spot.address %>
-  </p>
-  <p>
-    <%= f.label :start_time %>
-    <%= @spot.start_time %>
-    <%= f.label :close_time %>
-    <%= @spot.close_time %>
-  </p>
-  <p>
-    <%= f.label :nursing_room %>
-    <%= @spot.nursing_room %>
-  </p>
-  <p>
-    <%= f.label :hot_water %>
-    <%= @spot.hot_water %>
-  </p>
-  <p>
-    <%= f.label :female_only %>
-    <%= @spot.female_only %>
-  </p>
-  <p>
-    <%= f.label :rental_stroller %>
-    <%= @spot.rental_stroller %>
-  </p>
-  <p>
-    <%= f.label :baby_chair %>
-    <%= @spot.baby_chair %>
-  </p>
-  <p>
-    <%= f.label :kids_space %>
-    <%= @spot.kids_space %>
-  </p>
-  <p>
-    <%= f.label :microwave %>
-    <%= @spot.microwave %>
-  </p>
-  <p>
-    <%= f.label :sink %>
-    <%= @spot.sink %>
-  </p>
-  <p>
-    <%= f.label :diapers_trash_bin %>
-    <%= @spot.diapers_trash_bin %>
-  </p>
-  <p>
-    <%= f.label :diaper_stand %>
-    <%= @spot.diaper_stand %>
-  </p>
-  <p>
-    <%= f.label :baby_scales %>
-    <%= @spot.baby_scales %>
-  </p>
-  <p>
-    <%= f.label :memo %>
-    <%= @spot.memo %>
-  </p>
-  <p>
-  <%= hidden_field_tag :"cache[picture]", @spot.picture.cache_name %>
-  <%= image_tag(@spot.picture, :class => "confirm-picture") %>
-  </p>
+<section class="spot-form-wrap">
+  <div class="confirm-wrap">
+    <%= form_for(@spot) do |f| %>
+      <div class="spot-form">
+        <div class="spot-form-list spot-form-list-name">
+          <div class="form-list-title"><%= f.label :name, "スポット名" %></div>
+          <div class="form-list-data"><%= @spot.name %></div>
+        </div>
+        <div class="spot-form-list spot-form-list-postal_code">
+          <div class="form-list-title"><%= f.label :postal_code, "郵便番号" %></div>
+          <div class="form-list-data"><%= @spot.postal_code %></div>
+        </div>
+        <div class="spot-form-list spot-form-list-region">
+          <div class="form-list-title"><%= f.label :region, "都道府県" %></div>
+          <div class="form-list-data"><%= @spot.region %></div>
+        </div>
+        <div class="spot-form-list spot-form-list-address">
+          <div class="form-list-title"><%= f.label :address, "所在地" %></div>
+          <div class="form-list-data"><%= @spot.address %></div>
+        </div>
+        <div class="spot-form-list spot-form-list-start_time">
+          <div class="form-list-title"><%= f.label :start_time, "営業開始時間" %></div>
+          <div class="form-list-data"><%= @spot.start_time %></div>
+        </div>
+        <div class="spot-form-list spot-form-list-close_time">
+          <div class="form-list-title"><%= f.label :close_time, "営業終了時間" %></div>
+          <div class="form-list-data"><%= @spot.close_time %></div>
+        </div>
+        <div class="spot-form-list spot-form-list-select">
+          <div class="form-list-title">利用可能設備</div>
+            <div class="spot-tags">
+              <% if @spot.nursing_room == "true" %>
+                <span class="spot-info spot-info-tag spot-info-nursing_room">授乳室</span>
+              <% end %>
+              <% if @spot.diaper_stand == "true" %>
+                <span class="spot-info spot-info-tag spot-info-diaper_stand">おむつ台</span>
+              <% end %>
+              <% if @spot.hot_water == "true" %>
+                <span class="spot-info spot-info-tag spot-info-hot_water">お湯</span>
+              <% end %>
+              <% if @spot.kids_space == "true" %>
+                <span class="spot-info spot-info-tag spot-info-kids_space">キッズスペース</span>
+              <% end %>
+              <% if @spot.microwave == "true" %>
+                <span class="spot-info spot-info-tag spot-info-microwave">電子レンジ</span>
+              <% end %>
+              <% if @spot.sink == "true" %>
+                <span class="spot-info spot-info-tag spot-info-sink">洗面台</span>
+              <% end %>
+              <% if @spot.female_only == "true" %>
+                <span class="spot-info spot-info-tag spot-info-female_only">女性限定</span>
+              <% end %>
+              <% if @spot.rental_stroller == "true" %>
+                <span class="spot-info spot-info-tag spot-info-rental_stroller">ベビーカー貸出</span>
+              <% end %>
+              <% if @spot.baby_chair == "true" %>
+                <span class="spot-info spot-info-tag spot-info-baby_chair">ベビーチェア</span>
+              <% end %>
+              <% if @spot.diapers_trash_bin == "true" %>
+                <span class="spot-info spot-info-tag spot-info-diapers_trash_bin">おむつ用ゴミ箱</span>
+              <% end %>
+              <% if @spot.baby_scales == "true" %>
+                <span class="spot-info spot-info-tag spot-info-baby_scales">身長体重計</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <%= hidden_field_tag :"cache[picture]", @spot.picture.cache_name %>
+        <% if @spot.picture.present? %>
+          <div class="spot-form-list spot-form-list-picture">
+            <%= image_tag(@spot.picture, :class => "confirm-picture") %>
+          </div>
+        <% end %>
 
-  <%= f.submit %>
-<% end %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :memo %>
+        <%= f.hidden_field :postal_code %>
+        <%= f.hidden_field :region %>
+        <%= f.hidden_field :address %>
+        <%= f.hidden_field :start_time %>
+        <%= f.hidden_field :close_time %>
+        <%= f.hidden_field :nursing_room %>
+        <%= f.hidden_field :hot_water %>
+        <%= f.hidden_field :female_only %>
+        <%= f.hidden_field :rental_stroller %>
+        <%= f.hidden_field :baby_chair %>
+        <%= f.hidden_field :kids_space %>
+        <%= f.hidden_field :microwave %>
+        <%= f.hidden_field :sink %>
+        <%= f.hidden_field :diapers_trash_bin %>
+        <%= f.hidden_field :diaper_stand %>
+        <%= f.hidden_field :baby_scales %>
 
-<%= form_for(@spot, url: new_spot_path, method: 'get') do |f| %>
-  <%= f.hidden_field :name %>
-  <%= f.hidden_field :memo %>
-  <%= f.hidden_field :postal_code %>
-  <%= f.hidden_field :region %>
-  <%= f.hidden_field :address %>
-  <%= f.hidden_field :start_time %>
-  <%= f.hidden_field :close_time %>
-  <%= f.hidden_field :nursing_room %>
-  <%= f.hidden_field :hot_water %>
-  <%= f.hidden_field :female_only %>
-  <%= f.hidden_field :rental_stroller %>
-  <%= f.hidden_field :baby_chair %>
-  <%= f.hidden_field :kids_space %>
-  <%= f.hidden_field :microwave %>
-  <%= f.hidden_field :sink %>
-  <%= f.hidden_field :diapers_trash_bin %>
-  <%= f.hidden_field :diaper_stand %>
-  <%= f.hidden_field :baby_scales %>
-  <%= f.submit "もどる", name: 'back' %>
-<% end %>
+        <%= f.submit class: "btn-strong-m" %>
+        <% end %>
+
+        <%= form_for(@spot, url: new_spot_path, method: 'get') do |f| %>
+          <%= f.hidden_field :name %>
+          <%= f.hidden_field :memo %>
+          <%= f.hidden_field :postal_code %>
+          <%= f.hidden_field :region %>
+          <%= f.hidden_field :address %>
+          <%= f.hidden_field :start_time %>
+          <%= f.hidden_field :close_time %>
+          <%= f.hidden_field :nursing_room %>
+          <%= f.hidden_field :hot_water %>
+          <%= f.hidden_field :female_only %>
+          <%= f.hidden_field :rental_stroller %>
+          <%= f.hidden_field :baby_chair %>
+          <%= f.hidden_field :kids_space %>
+          <%= f.hidden_field :microwave %>
+          <%= f.hidden_field :sink %>
+          <%= f.hidden_field :diapers_trash_bin %>
+          <%= f.hidden_field :diaper_stand %>
+          <%= f.hidden_field :baby_scales %>
+          <%= f.submit "もどる", name: 'back', class: "btn-normal-m" %>
+        <% end %>
+      </div>
+  </div>
+</section>
