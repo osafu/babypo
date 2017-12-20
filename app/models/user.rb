@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader #deviseの設定配下に追記
 
-  has_many :spots, dependent: :destroy
+  has_many :spots
   has_many :comments, dependent: :destroy
 
 

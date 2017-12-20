@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= f.label :email, class: "field-label" do %>
-    <i class="fa fa-envelope-o"></i>メールアドレス
+      <p class="icon-text"><i class="material-icons">mail_outline</i><em>メールアドレス</em></p>
     <% end %>
     <%= f.email_field :email, :placeholder => "メールアドレス", autofocus: true %>
   </div>
@@ -21,21 +21,21 @@
 
     <div class="field">
       <%= f.label :password, class: "field-label" do %>
-      <i class="fa fa-lock"></i>パスワード&nbsp;※変更しない場合は未入力<br />
+      <p class="icon-text"><i class="material-icons">lock_outline</i><em>パスワード&nbsp;※変更しない場合は未入力</em></p>
       <% end %>
       <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :password_confirmation, class: "field-label" do %>
-      <i class="fa fa-lock"></i>パスワード(確認用)<br />
+      <p class="icon-text"><i class="material-icons">lock_outline</i><em>パスワード(確認用)</em></p>
       <% end %>
       <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :current_password, class: "field-label" do %>
-      <i class="fa fa-lock"></i>現在のパスワード<br />
+      <p class="icon-text"><i class="material-icons">lock_outline</i><em>現在のパスワード</em></p>
       <% end %>
       <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
     </div>
@@ -44,7 +44,7 @@
 
     <div class="field">
       <%= f.label :avatar_title, class: "field-label" do %>
-      <i class="material-icons">file_upload</i>プロフィール画像
+      <p class="icon-text"><i class="material-icons">photo</i><em>プロフィール画像</em></p>
       <% end %>
       <div class="profile-img"><%= profile_img(@user) if profile_img(@user) %></div>
       <%= f.label :avatar, class: "btn btn-upload" do %>
@@ -63,15 +63,18 @@
 </div>
 <% end %>
 
-<div class="form-content form-content-sub row">
-  <div class="form-content-in col-md-4">
-    <%= button_to registration_path(resource_name), class: "shared-link", data: { confirm: "本当に登録を解除しますか？" }, method: :delete do %>
-      <i class="fa fa-remove"></i>会員登録を解約する
-    <% end %>
-    <p class="link-back"><%= link_to :back, class: "btn btn-link btn-back" do %>
-    <i class="fa fa-arrow-left"></i>前の画面に戻る
+<div class="form-content form-content-sub">
+  <div class="form-content-in">
+    <p class="shared-link">
+      <%= link_to registration_path(resource_name), class: "link-remove", data: { confirm: "本当に登録を解除しますか？" }, method: :delete do %>
+        <i class="fa fa-remove"></i>会員登録を解約する
+      <% end %>
     </p>
-    <% end %>
+    <p class="shared-link">
+        <%= link_to :back, class: "link-back" do %>
+          <i class="fa fa-arrow-left"></i>前の画面に戻る
+        <% end %>
+      </p>
   </div>
 </div>
 
