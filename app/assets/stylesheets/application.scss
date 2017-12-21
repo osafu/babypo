@@ -374,6 +374,9 @@ header{
   width: 100%;
   min-height: 100%;
   overflow: hidden;
+  .main-visual-sp{
+    display: none;
+  }
   &:before{
     content:"";
     position: absolute;
@@ -829,3 +832,71 @@ footer{
   text-align:left;     /* 中身を左側表示に戻す */
   width: 80%
 }
+
+@media screen and (max-width: 768px){
+  .top-column{
+    .top-column-in{
+      min-height: 320px;
+      h1{
+        @include font-size($f-size-xl);
+        margin: 20px 0 30px;
+      }
+      .main-search{
+        position: absolute;
+        top: 28%;
+        width: 80%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        form#spot_search {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .main-visual{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    .main-visual-pc{
+      display: none;
+    }
+    .main-visual-sp{
+      display: block;
+      &:before{
+        content:"";
+        position: absolute;
+        top: 0;
+        background-color: #000;
+        opacity: 0.1;
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+  .main-column{
+    max-width: 1060px;
+    margin: 20px auto 40px;
+    .spots-list-wrap{
+      display: flex;
+      justify-content: start;
+      flex-flow: wrap;
+      margin-bottom: 40px;
+      .spots-list{
+        padding: 30px 25px;
+        margin: 0 auto 30px;
+        border-radius: 5px;
+        width: 90%;
+        text-align: left;
+        box-sizing: border-box;
+        background-color: #FFF;
+        border: solid 1px #CCC;
+        &:not(:nth-child(3n)){
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}
+
