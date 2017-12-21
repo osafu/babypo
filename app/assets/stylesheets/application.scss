@@ -944,3 +944,20 @@ footer{
     }
   }
 }
+
+.spots-show{
+  .spots-show-in{
+    width: 90%;
+    margin: 0 auto;
+    .spots-show-main{
+      display: flex;
+      flex-wrap: wrap;
+      flex-flow: column-reverse;
+      .caption-column {
+          min-width: 100%;
+          max-width: 100%;
+          margin-right: 30px;
+      }
+    }
+  }
+}
