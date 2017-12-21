@@ -745,7 +745,7 @@ footer{
  .form-content-main{
    margin-bottom: 30px;
    .form-content-in{
-     padding: 40px;
+     padding: 30px;
      margin: 0 auto 10px;
      width:40%;
      box-sizing: border-box;
@@ -840,6 +840,16 @@ footer{
   }
   select{
     width: 100%;
+  }
+  header{
+    .header-in{
+      .logo{
+        margin: 0 auto;
+      }
+      .head-nav{
+        display: none;
+      }
+    }
   }
   .top-column{
     .top-column-in{
