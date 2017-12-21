@@ -318,6 +318,12 @@ header{
       .logo-img{
         max-height:30px;
       }
+      .logo-img-default{
+        display: block;
+      }
+      .logo-img-white{
+        display: none;
+      }
     }
     .head-nav{
       display: -webkit-flex;
@@ -843,8 +849,16 @@ footer{
   }
   header{
     .header-in{
+      background-color: $main-color;
       .logo{
         margin: 0 auto;
+        width: 40%;
+        .logo-img-default{
+          display: none;
+        }
+        .logo-img-white{
+          display: block;
+        }
       }
       .head-nav{
         display: none;
