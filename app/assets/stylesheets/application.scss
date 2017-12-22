@@ -701,7 +701,7 @@ header{
       }
     }
     .not-signin-msg {
-      padding: 20px;
+      padding: 20px 0;
       text-align: center;
       .msg-sub{
         color: #999;
@@ -721,14 +721,6 @@ footer{
   text-align: center;
   width: 100%;
 }
-
-#map{
-  height: 400px;
-   margin-left:auto;    /* 左側マージンを自動的に空ける */
-   margin-right:auto;   /* 右側マージンを自動的に空ける */
-   text-align:left;     /* 中身を左側表示に戻す */
-   width: 80%
- }
 
  .form-content{
    i.fa{
@@ -833,14 +825,13 @@ footer{
 
 #map{
   height: 400px;
-  margin-left:auto;    /* 左側マージンを自動的に空ける */
-  margin-right:auto;   /* 右側マージンを自動的に空ける */
-  text-align:left;     /* 中身を左側表示に戻す */
-  width: 80%
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+  width: 100%
 }
 
 @media screen and (max-width: 768px){
-
   h1{
     margin: 20px 0 35px;
   }
@@ -861,7 +852,11 @@ footer{
         }
       }
       .head-nav{
-        display: none;
+        .nav-menu{
+          a{
+            color: #FFF;
+          }
+        }
       }
     }
   }
@@ -871,10 +866,11 @@ footer{
       h1{
         @include font-size($f-size-xl);
         margin: 20px 0 30px;
+        line-height: 40px;
       }
       .main-search{
         position: absolute;
-        top: 20%;
+        top: 18%;
         width: 80%;
         margin: 0 auto;
         form#spot_search {
@@ -907,6 +903,14 @@ footer{
   .main-column{
     max-width: 1060px;
     margin: 20px auto 40px;
+    h1{
+      margin-top: 60px;
+    }
+    .spots-search{
+      form#spot_search{
+        width: 80%;
+      }
+    }
     .spots-list-wrap{
       .spots-list{
         margin: 0 auto 30px;
@@ -926,6 +930,12 @@ footer{
           width: 100%;
           padding: 0;
           margin: 0;
+          .list-time-wrap{
+            #spot_start_time,
+            #spot_close_time{
+              height: 45px;
+            }
+          }
           .form-list-data{
             select{
               margin-bottom: 20px;
@@ -943,25 +953,46 @@ footer{
       }
     }
   }
-}
-
-.spots-show{
-  .spots-show-in{
-    width: 90%;
-    margin: 0 auto;
-    .spots-show-main{
-      display: flex;
-      flex-wrap: wrap;
-      flex-flow: column-reverse;
-      .caption-column {
-        min-width: 100%;
-        max-width: 100%;
-        margin-right: 0;
-        #map{
-          widows: 100%;
+  
+  .spots-show{
+    .spots-show-in{
+      width: 90%;
+      margin: 0 auto;
+      .spots-show-main{
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: column-reverse;
+        .caption-column {
+          min-width: 100%;
+          max-width: 100%;
           margin-right: 0;
+          #map{
+            widows: 100%;
+            margin-right: 0;
+          }
+        }
+      }
+      .spots-show-sub{
+        .spot-comment{
+          margin: 0 0 20px;
+          .new_comment{
+            .new-comment-back{
+              margin-top: 20px;
+              display: inline-block;
+            }
+          }
         }
       }
     }
   }
+  footer{
+    margin-top: 40px;
+    small{
+      @include font-size($f-size-xs);
+    }
+  }
+  #map{
+    height: 200px;
+  }
 }
+
