@@ -17,6 +17,7 @@
 $main-color: #4BA69C;
 
 $f-family-base: 'Arial','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo','sans-serif' ;
+$f-size-xxs: 9px;
 $f-size-xs: 11px;
 $f-size-s: 12px;
 $f-size-m: 14px;
@@ -860,7 +861,7 @@ footer{
             .nav-menu-list-text{
               display: block;
               color: #FFF;
-              @include font-size($f-size-xs);
+              @include font-size($f-size-xxs);
             }
             .nav-menu-list-icon{
               display: block;
@@ -1003,7 +1004,7 @@ footer{
   footer{
     margin-top: 40px;
     small{
-      @include font-size($f-size-xs);
+      @include font-size($f-size-xxs);
     }
   }
   #map{
