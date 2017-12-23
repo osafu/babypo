@@ -67,6 +67,10 @@
             </div>
           </div>
         </div>
+        <div class="spot-form-list spot-form-list-memo">
+          <div class="form-list-title"><%= f.label :memo, "コメント" %></div>
+          <div class="form-list-data"><%= @spot.memo %></div>
+        </div>
         <%= hidden_field_tag :"cache[picture]", @spot.picture.cache_name %>
         <% if @spot.picture.present? %>
           <div class="spot-form-list spot-form-list-picture">
