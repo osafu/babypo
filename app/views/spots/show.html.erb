@@ -126,6 +126,8 @@
         // ジオコーディングが成功しなかった場合
         } else {
           console.log('Geocode was not successful for the following reason: ' + status);
+          $("#map").addClass("map-error");
+          $("#map").html('<p class="map-error-msg"><i class="material-icons">warning</i><em>このスポットのマップは表示できません。</em></p>');
         }
 
       });

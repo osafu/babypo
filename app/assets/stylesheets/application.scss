@@ -609,12 +609,41 @@ header{
         margin-right: 5px;
         color: #666;
       }
-      .caption-column {
+      .caption-column{
         min-width: 50%;
         max-width: 50%;
         margin-right: 30px;
         #map{
           margin-bottom: 30px;
+          }
+        .map-error{
+          background-color: #F5F5F5;
+          .map-error-msg{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: fit-content;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            color: #B5B5B5;
+            @include font-size($f-size-l);
+            i{
+              display: block;
+              color: #B5B5B5;
+              font-size: 70px;
+              line-height: 60px;
+              margin: 0px 0 20px 0;
+            }
+            em{
+              display: block;
+              padding: 0 30px;
+              line-height: 25px;
+            }
+          }
         }
         .spot-picture{
           margin-bottom: 30px;
