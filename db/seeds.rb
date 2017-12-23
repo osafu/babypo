@@ -3,7 +3,7 @@ Faker::Config.locale = :ja
 30.times do |n|
   name = Faker::Address.community
   postal_code = ”1500044”
-  region =  "東京都"
+  region = "東京都"
   address = "渋谷区円山町28-4"
   start_time = "09:00"
   close_time = "21:00"
