@@ -842,9 +842,17 @@ footer{
   select{
     width: 100%;
   }
+  .wrapper{
+    padding-top: 68px;
+  }
   header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
     .header-in{
       background-color: $main-color;
+      padding: 15px;
       .logo{
         width: 20%;
         min-width: 85px;
