@@ -566,9 +566,13 @@ header{
     }
     .spot-form-list-picture{
       text-align: center;
+      .form-list-data{
+        margin: 20px 0;
+      }
     }
     .form-list-title{
       margin-bottom: 10px;
+      text-align: left;
     }
   }
   .confirm-wrap{

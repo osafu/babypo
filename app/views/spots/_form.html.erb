@@ -87,8 +87,9 @@
       <div class="form-list-data"><%= f.text_area :memo, size: "50x5" %></div>
     </div>
     <div class="spot-form-list spot-form-list-picture">
-      <div class="form-list-title"><%= f.file_field :picture, class: "spot-picture" %></div>
-      <div class="form-list-data"><%= f.hidden_field :picture_cache %></div>
+      <div class="form-list-title"><%= f.label :picture, "このスポットの写真" %></div>
+      <div class="form-list-data"><%= f.file_field :picture, class: "spot-picture" %></div>
+      <div class="form-list-hidden"><%= f.hidden_field :picture_cache %></div>
     </div>
   </div>
 
