@@ -315,6 +315,8 @@ header{
     .logo{
       width: 20%;
       margin-right: auto;
+      margin-top: auto;
+      margin-bottom: auto;
       .logo-img{
         max-height:30px;
       }
@@ -338,7 +340,8 @@ header{
         align-items: center;
         justify-content: center;
         .nav-menu-list{
-          a{
+          .nav-menu-list-icon{
+            display: none;
           }
           &:not(:last-child){
             margin-right: 20px;
@@ -842,8 +845,8 @@ footer{
     .header-in{
       background-color: $main-color;
       .logo{
-        margin: 0 auto;
-        width: 40%;
+        width: 20%;
+        min-width: 85px;
         .logo-img-default{
           display: none;
         }
@@ -853,8 +856,20 @@ footer{
       }
       .head-nav{
         .nav-menu{
-          a{
-            color: #FFF;
+          .nav-menu-list{
+            .nav-menu-list-text{
+              display: block;
+              color: #FFF;
+              @include font-size($f-size-xs);
+            }
+            .nav-menu-list-icon{
+              display: block;
+              color: #FFF;
+              margin-bottom: 5px;
+            }
+            &:not(:last-child){
+              margin-right: 10px;
+            }
           }
         }
       }
@@ -953,7 +968,7 @@ footer{
       }
     }
   }
-  
+
   .spots-show{
     .spots-show-in{
       width: 90%;
@@ -995,4 +1010,3 @@ footer{
     height: 200px;
   }
 }
-

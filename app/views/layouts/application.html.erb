@@ -25,16 +25,40 @@
           </p>
           <nav class="head-nav">
             <ul class="nav-menu">
-              <li class="nav-menu-list"><%= link_to "スポット投稿", new_spot_path %></li>
-              <li class="nav-menu-list"><%= link_to "スポット一覧", spots_path %></li>
+              <li class="nav-menu-list">
+                <%= link_to new_spot_path do %>
+                <i class="material-icons nav-menu-list-icon">add</i><span class="nav-menu-list-text">スポット投稿</span>
+                <% end %>
+              </li>
+              <li class="nav-menu-list">
+                <%= link_to spots_path do %>
+                <i class="material-icons nav-menu-list-icon">view_list</i><span class="nav-menu-list-text">スポット一覧</span>
+                <% end %>
+              </li>
               <% if user_signed_in? %>
-              <li class="nav-menu-list"><%= link_to 'マイページ', edit_user_registration_path %></li>
-              <li class="nav-menu-list"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                <li class="nav-menu-list">
+                  <%= link_to edit_user_registration_path do %>
+                  <i class="material-icons nav-menu-list-icon">person</i><span class="nav-menu-list-text">マイページ</span>
+                  <% end %>
+                </li>
+                <li class="nav-menu-list">
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="material-icons nav-menu-list-icon">exit_to_app</i><span class="nav-menu-list-text">ログアウト</span>
+                  <% end %>
+                </li>
               <% else %>
-              <li class="nav-menu-list"><%= link_to 'ログイン', new_user_session_path  %></li>
-              <li class="nav-menu-list"><%= link_to 'サインアップ', new_user_registration_path %></li>
+                <li class="nav-menu-list">
+                  <%= link_to new_user_session_path do %>
+                  <i class="material-icons nav-menu-list-icon">input</i><span class="nav-menu-list-text">ログイン</span>
+                  <% end %>
+                </li>
+                <li class="nav-menu-list">
+                  <%= link_to new_user_registration_path do %>
+                  <i class="material-icons nav-menu-list-icon">person_add</i><span class="nav-menu-list-text">会員登録</span>
+                  <% end %>
+                </li>
               <% end %>
-            </ul>
+              </ul>
           </nav>
         </section>
       </header>
@@ -63,7 +87,7 @@
       <%= yield %>
       </section>
       <footer>
-        <small> Copyright &copy; 2017, osapoco All Rights Reserved.</small> 
+        <small> Copyright &copy; 2017, osapoco All Rights Reserved.</small>
       </footer>
     </section>
   </body>
