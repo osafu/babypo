@@ -14,7 +14,7 @@
 
   <body>
     <section class="wrapper">
-      <p class="flash"><%= notice %><%= alert %></p>
+      <p class="head-flash"><%= notice %><%= alert %></p>
       <header>
         <section class="header-in">
           <p class="logo">
@@ -91,4 +91,11 @@
       </footer>
     </section>
   </body>
+
+  <script>
+    $(function() {
+     $(".head-flash:empty").remove();
+    })
+  </script>
+
 </html>

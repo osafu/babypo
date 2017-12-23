@@ -8,9 +8,6 @@
           <% if current_user.id == comment.user.id %>
           <div class="comment-action">
             <p>
-              <%= link_to edit_spot_comment_path(spot, comment), class: "comment-edit" do %>
-                <i class="material-icons">create</i>
-              <% end %>
               <%= link_to spot_comment_path(spot, comment), class: "comment-delete", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } do %>
                 <i class="material-icons">delete</i>
               <% end %>

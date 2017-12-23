@@ -1,6 +1,7 @@
 <%= form_for([spot,comment], remote: true) do |f| %>
   <%= f.hidden_field :spot_id %>
   <div class="field">
+    <p class="comment-notice"><%= notice %></p>
     <%= f.text_field :content, placeholder: "コメント" %>
   </div>
   <div class="actions">

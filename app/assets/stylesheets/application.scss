@@ -298,8 +298,11 @@ i.material-icons{
   }
 }
 
-.flash {
-    color: #666;
+.head-flash {
+    background-color: $main-color;
+    color: #FFF;
+    padding: 10px;
+    font-weight: bold;
 }
 
 header{
@@ -609,6 +612,9 @@ header{
         #map{
           margin-bottom: 30px;
         }
+        .spot-picture{
+          margin-bottom: 30px;
+        }
       }
       .info-column {
         padding: 20px 0 0 0;
@@ -723,6 +729,11 @@ header{
       }
       .new-comment-back:hover em{
         text-decoration: underline;
+      }
+      .comment-notice{
+        padding: 10px;
+        text-align: center;
+        color: #666;
       }
     }
     .not-signin-msg {
